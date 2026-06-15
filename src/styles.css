@@ -1198,12 +1198,13 @@
   .home-news__grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 2rem;
+    column-gap: 2rem;
+    row-gap: clamp(4rem, 6vw, 7rem);
   }
 
   .home-news-card a {
     display: grid;
-    gap: 2rem;
+    gap: clamp(2.4rem, 3.4vw, 4rem);
     color: inherit;
   }
 
@@ -5437,7 +5438,7 @@
   }
 
   .home-news-card a {
-    gap: 1.45rem;
+    gap: 2.6rem;
   }
 
   .news-hero,
