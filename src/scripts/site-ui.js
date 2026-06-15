@@ -117,10 +117,6 @@ export function initSiteUI() {
         mobileNav.append(group);
       });
 
-      const utility = document.createElement("div");
-      utility.className = "mobile-menu__utility";
-      utility.innerHTML = '<a href="/" lang="en">EN</a>';
-      mobileNav.append(utility);
     }
   }
 
