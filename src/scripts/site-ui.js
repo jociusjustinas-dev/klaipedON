@@ -50,6 +50,7 @@ export function initSiteUI() {
   const menuToggle = document.querySelector("[data-menu-toggle]");
   const mobileMenu = document.querySelector("[data-mobile-menu]");
   const header = document.querySelector("[data-site-header]");
+  const navItemsWithSubmenu = document.querySelectorAll(".site-nav__item:has(.site-nav__submenu)");
   const accordionTriggers = document.querySelectorAll("[data-accordion-trigger]");
   const hoverPreview = document.querySelector("[data-accordion-hover-preview]");
   const hoverPreviewImage = document.querySelector("[data-accordion-hover-image]");
@@ -67,6 +68,10 @@ export function initSiteUI() {
     ".events-panel, .info-panel, .home-attractions__intro, .home-attractions__layout, .home-guide__intro, .home-guide-card, .home-news__head, .home-news-card, .news-hero__inner, .news-archive__intro, .news-card, .news-detail-hero__inner, .news-detail-content__inner, .bike-hero__inner, .bike-content__intro, .bike-section, .archive-hero__inner, .exhibitions-hero__inner, .exhibition-venue, .exhibition-card, .about-hero__inner, .about-history-row, .living-hero__inner, .living-directory__intro, .living-card, .living-map, .events-filter, .event-categories, .archive-event-card",
   );
   const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  navItemsWithSubmenu.forEach((item) => {
+    item.classList.add("site-nav__item--has-submenu");
+  });
 
   if (menuToggle && mobileMenu) {
     menuToggle.addEventListener("click", () => {
