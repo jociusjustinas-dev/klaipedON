@@ -1271,6 +1271,7 @@
 
   .home-news-card__body span {
     margin-top: 0.55rem;
+    margin-bottom: clamp(2rem, 3vw, 3.5rem);
   }
 
   .page-shell--news {
@@ -5434,7 +5435,8 @@
   }
 
   .home-news__grid {
-    gap: 3rem;
+    column-gap: 3rem;
+    row-gap: 5rem;
   }
 
   .home-news-card a {
