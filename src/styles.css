@@ -116,19 +116,19 @@
     transition: opacity 180ms ease;
   }
 
-  .site-header:has(.site-nav__item:hover),
-  .site-header:has(.site-nav__item:focus-within) {
+  .site-header:has(.site-nav__item:has(.site-nav__submenu):hover),
+  .site-header:has(.site-nav__item:has(.site-nav__submenu):focus-within) {
     color: var(--color-ink);
   }
 
-  .site-header:has(.site-nav__item:hover)::before,
-  .site-header:has(.site-nav__item:focus-within)::before {
+  .site-header:has(.site-nav__item:has(.site-nav__submenu):hover)::before,
+  .site-header:has(.site-nav__item:has(.site-nav__submenu):focus-within)::before {
     opacity: 1;
     transform: translateY(0);
   }
 
-  .site-header:has(.site-nav__item:hover)::after,
-  .site-header:has(.site-nav__item:focus-within)::after {
+  .site-header:has(.site-nav__item:has(.site-nav__submenu):hover)::after,
+  .site-header:has(.site-nav__item:has(.site-nav__submenu):focus-within)::after {
     opacity: 0;
   }
 
@@ -168,7 +168,7 @@
     position: relative;
   }
 
-  .site-nav__item::after {
+  .site-nav__item:has(.site-nav__submenu)::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -227,8 +227,8 @@
     transform: translateX(0.55rem);
   }
 
-  .site-nav__item:hover .site-nav__submenu,
-  .site-nav__item:focus-within .site-nav__submenu {
+  .site-nav__item:has(.site-nav__submenu):hover .site-nav__submenu,
+  .site-nav__item:has(.site-nav__submenu):focus-within .site-nav__submenu {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
@@ -265,15 +265,15 @@
     transition: background 260ms ease;
   }
 
-  .site-header:has(.site-nav__item:hover) .site-logo img,
-  .site-header:has(.site-nav__item:focus-within) .site-logo img,
-  .site-header:has(.site-nav__item:hover) .site-header__icons,
-  .site-header:has(.site-nav__item:focus-within) .site-header__icons {
+  .site-header:has(.site-nav__item:has(.site-nav__submenu):hover) .site-logo img,
+  .site-header:has(.site-nav__item:has(.site-nav__submenu):focus-within) .site-logo img,
+  .site-header:has(.site-nav__item:has(.site-nav__submenu):hover) .site-header__icons,
+  .site-header:has(.site-nav__item:has(.site-nav__submenu):focus-within) .site-header__icons {
     filter: brightness(0);
   }
 
-  .site-header:has(.site-nav__item:hover) .site-header__divider,
-  .site-header:has(.site-nav__item:focus-within) .site-header__divider {
+  .site-header:has(.site-nav__item:has(.site-nav__submenu):hover) .site-header__divider,
+  .site-header:has(.site-nav__item:has(.site-nav__submenu):focus-within) .site-header__divider {
     background: rgba(2, 2, 5, 0.7);
   }
 
