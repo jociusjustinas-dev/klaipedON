@@ -4972,6 +4972,10 @@
   }
 
   .mobile-menu.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    visibility: visible;
     transition:
       opacity 360ms var(--ease-out-cinematic),
       transform 520ms var(--ease-out-cinematic),
