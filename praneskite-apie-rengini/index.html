@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="lt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praneškite apie renginį | KlaipėdON</title>
+    <meta
+      name="description"
+      content="Pateikite informaciją apie Klaipėdoje vykstantį renginį KlaipėdON komandai."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page-shell page-shell--submit-event">
+      <header class="site-header" data-site-header data-wp-partial="template-parts/header/site-header.php">
+        <div class="site-header__inner">
+          <a class="site-logo" href="/" aria-label="KlaipėdON">
+            <img data-asset="logo-header" alt="KlaipėdON" />
+          </a>
+
+          <button
+            type="button"
+            class="menu-toggle"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            data-menu-toggle
+          >
+            Meniu
+          </button>
+
+          <nav class="site-nav" aria-label="Pagrindinė navigacija">
+            <div class="site-nav__item">
+              <a class="site-nav__link" href="/renginiai/">Renginiai</a>
+              <div class="site-nav__submenu">
+                <a href="/renginiai/">Visi renginiai</a>
+                <a href="/renginiai/savaitgali/">Šį savaitgalį</a>
+                <a href="/renginiai/koncertai/">Koncertai</a>
+                <a href="/renginiai/parodos/">Parodos</a>
+                <a href="/praneskite-apie-rengini/">Pranešk apie renginį</a>
+              </div>
+            </div>
+
+            <div class="site-nav__item">
+              <a class="site-nav__link" href="/#atrask">Atrask</a>
+              <div class="site-nav__submenu">
+                <a href="/atrask/">Klaipėdos kryptys</a>
+                <a href="/atrask/marsrutai/">Maršrutai</a>
+                <a href="/atrask/dviraciu/">Dviračiu</a>
+                <a href="/atrask/jura/">Prie jūros</a>
+                <a href="/naujienos/">Naujienos</a>
+              </div>
+            </div>
+
+            <div class="site-nav__item">
+              <a class="site-nav__link" href="/gyvenk/">Gyvenk</a>
+              <div class="site-nav__submenu">
+                <a href="/gyvenk/">Apgyvendinimas</a>
+                <a href="/gyvenk/kur-pavalgyti/">Kur pavalgyti</a>
+                <a href="/gyvenk/kaip-atvykti/">Kaip atvykti</a>
+              </div>
+            </div>
+
+            <div class="site-nav__item">
+              <a class="site-nav__link" href="/#investuok">Investuok ir dirbk</a>
+              <div class="site-nav__submenu">
+                <a href="/investuok-ir-dirbk/">Galimybės</a>
+                <a href="/investuok-ir-dirbk/verslas/">Verslui</a>
+                <a href="/investuok-ir-dirbk/karjera/">Karjera</a>
+              </div>
+            </div>
+
+            <div class="site-nav__item">
+              <a class="site-nav__link" href="/apie/">Apie</a>
+            </div>
+          </nav>
+
+          <div class="site-header__tools" aria-label="Naudotojo veiksmai">
+            <div class="site-header__icons" aria-hidden="true">
+              <i data-lucide="search"></i>
+              <i data-lucide="accessibility"></i>
+            </div>
+            <span class="site-header__divider" aria-hidden="true"></span>
+            <a class="site-lang" href="/" lang="en">EN</a>
+          </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu" data-mobile-menu>
+          <nav class="mobile-menu__nav" aria-label="Mobilioji navigacija">
+            <a href="/renginiai/">Renginiai</a>
+            <a href="/renginiai/parodos/">Parodos</a>
+            <a href="/praneskite-apie-rengini/">Pranešk apie renginį</a>
+            <a href="/#atrask">Atrask</a>
+            <a href="/atrask/dviraciu/">Dviračiu</a>
+            <a href="/naujienos/">Naujienos</a>
+            <a href="/gyvenk/">Gyvenk</a>
+            <a href="/#investuok">Investuok ir dirbk</a>
+            <a href="/apie/">Apie</a>
+            <a href="/" lang="en">EN</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="submit-hero" data-wp-partial="template-parts/submit-event/hero.php">
+          <div class="submit-hero__media" aria-hidden="true">
+            <img data-asset="hero-bg" alt="" />
+          </div>
+          <div class="submit-hero__panel">
+            <a class="event-detail-back" href="/renginiai/">Grįžti</a>
+            <div class="submit-hero__copy">
+              <p class="section-kicker">KlaipėdON kalendorius</p>
+              <h1 data-acf-field="submit_event_title">Praneškite apie renginį</h1>
+              <p data-acf-field="submit_event_intro">
+                Pildykite informaciją apie renginį. Mes peržiūrėsime pateiktus duomenis ir, jei informacija tinkama, įtrauksime renginį į KlaipėdON kalendorių.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="submit-event-section" data-wp-partial="template-parts/submit-event/form.php">
+          <form class="submit-event-form" data-acf-field="submit_event_form">
+            <div class="submit-event-form__intro">
+              <p class="section-kicker">Forma</p>
+              <h2>Renginio informacija</h2>
+              <p>Laukeliai pažymėti žvaigždute yra privalomi.</p>
+            </div>
+
+            <fieldset class="submit-form-block">
+              <legend>Renginio informacija</legend>
+              <div class="submit-form-grid submit-form-grid--two">
+                <label class="submit-field">
+                  <span>Renginio pavadinimas*</span>
+                  <input type="text" name="event_name" placeholder="Įrašykite renginio pavadinimą" required />
+                </label>
+                <div class="submit-field filter-control custom-select" data-custom-select>
+                  <span>Renginio tipas / kategorija*</span>
+                  <input type="hidden" name="event_category" value="" data-select-value />
+                  <button
+                    class="select-field"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="submit-category-select"
+                    data-select-trigger
+                  >
+                    <span data-select-label>Pasirinkite kategoriją</span>
+                    <i data-lucide="chevron-down"></i>
+                  </button>
+                  <div class="select-menu" id="submit-category-select" role="listbox" data-select-menu hidden>
+                    <button type="button" role="option" aria-selected="false" data-select-option data-value="koncertai">
+                      Koncertai
+                      <i data-lucide="check"></i>
+                    </button>
+                    <button type="button" role="option" aria-selected="false" data-select-option data-value="parodos">
+                      Parodos
+                      <i data-lucide="check"></i>
+                    </button>
+                    <button type="button" role="option" aria-selected="false" data-select-option data-value="festivaliai">
+                      Festivaliai
+                      <i data-lucide="check"></i>
+                    </button>
+                    <button type="button" role="option" aria-selected="false" data-select-option data-value="edukacijos">
+                      Edukacijos
+                      <i data-lucide="check"></i>
+                    </button>
+                    <button type="button" role="option" aria-selected="false" data-select-option data-value="ekskursijos">
+                      Ekskursijos
+                      <i data-lucide="check"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <label class="submit-field">
+                <span>Renginio aprašymas*</span>
+                <textarea name="event_description" rows="6" placeholder="Pateikite detalesnį renginio aprašymą..." required></textarea>
+              </label>
+              <label class="submit-field">
+                <span>Renginio nuoroda*</span>
+                <input type="url" name="event_url" placeholder="Įveskite renginio puslapio nuorodą" required />
+              </label>
+            </fieldset>
+
+            <fieldset class="submit-form-block">
+              <legend>Vieta ir laikas</legend>
+              <div class="submit-form-grid submit-form-grid--two">
+                <label class="submit-field">
+                  <span>Renginio vieta*</span>
+                  <input type="text" name="event_place" placeholder="pvz., Klaipėdos dramos teatras" required />
+                </label>
+                <label class="submit-field">
+                  <span>Adresas*</span>
+                  <input type="text" name="event_address" placeholder="pvz., Teatro a. 2, Klaipėda" required />
+                </label>
+                <div class="submit-field filter-control filter-control--date" data-date-picker>
+                  <span>Pradžios data*</span>
+                  <input type="hidden" name="event_start_date" value="" data-date-value />
+                  <button
+                    class="date-field"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="submit-start-date-calendar"
+                    data-date-trigger
+                  >
+                    <span data-date-label>Pasirinkite datą</span>
+                    <i data-lucide="calendar-days"></i>
+                  </button>
+                  <div class="date-calendar" id="submit-start-date-calendar" data-date-calendar hidden>
+                    <div class="date-calendar__header">
+                      <button type="button" aria-label="Ankstesnis mėnuo" data-date-prev><i data-lucide="chevron-left"></i></button>
+                      <strong data-date-month>Birželis 2026</strong>
+                      <button type="button" aria-label="Kitas mėnuo" data-date-next><i data-lucide="chevron-right"></i></button>
+                    </div>
+                    <div class="date-calendar__weekdays" aria-hidden="true">
+                      <span>P</span>
+                      <span>A</span>
+                      <span>T</span>
+                      <span>K</span>
+                      <span>P</span>
+                      <span>Š</span>
+                      <span>S</span>
+                    </div>
+                    <div class="date-calendar__grid" role="grid" aria-label="Pasirinkite renginio pradžios datą" data-date-grid></div>
+                    <div class="date-calendar__footer">
+                      <button type="button" data-date-clear>Išvalyti</button>
+                      <button type="button" data-date-today>Šiandien</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="submit-field filter-control filter-control--date" data-date-picker>
+                  <span>Pabaigos data</span>
+                  <input type="hidden" name="event_end_date" value="" data-date-value />
+                  <button
+                    class="date-field"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="submit-end-date-calendar"
+                    data-date-trigger
+                  >
+                    <span data-date-label>Pasirinkite datą</span>
+                    <i data-lucide="calendar-days"></i>
+                  </button>
+                  <div class="date-calendar" id="submit-end-date-calendar" data-date-calendar hidden>
+                    <div class="date-calendar__header">
+                      <button type="button" aria-label="Ankstesnis mėnuo" data-date-prev><i data-lucide="chevron-left"></i></button>
+                      <strong data-date-month>Birželis 2026</strong>
+                      <button type="button" aria-label="Kitas mėnuo" data-date-next><i data-lucide="chevron-right"></i></button>
+                    </div>
+                    <div class="date-calendar__weekdays" aria-hidden="true">
+                      <span>P</span>
+                      <span>A</span>
+                      <span>T</span>
+                      <span>K</span>
+                      <span>P</span>
+                      <span>Š</span>
+                      <span>S</span>
+                    </div>
+                    <div class="date-calendar__grid" role="grid" aria-label="Pasirinkite renginio pabaigos datą" data-date-grid></div>
+                    <div class="date-calendar__footer">
+                      <button type="button" data-date-clear>Išvalyti</button>
+                      <button type="button" data-date-today>Šiandien</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="submit-form-grid submit-form-grid--three">
+                <div class="submit-field filter-control custom-select" data-custom-select>
+                  <span>Durys atidaromos</span>
+                  <input type="hidden" name="doors_open" value="" data-select-value />
+                  <button class="select-field" type="button" aria-expanded="false" aria-controls="submit-doors-time-select" data-select-trigger>
+                    <span data-select-label>Pasirinkite laiką</span>
+                    <i data-lucide="clock"></i>
+                  </button>
+                  <div class="select-menu" id="submit-doors-time-select" role="listbox" data-select-menu hidden>
+                    <button type="button" role="option" aria-selected="false" data-select-option data-value="18:00">18:00 <i data-lucide="check"></i></button>
+                    <button type="button" role="option" aria-selected="false" data-select-option data-value="18:30">18:30 <i data-lucide="check"></i></button>
+                    <button type="button" role="option" aria-selected="false" data-select-option data-value="19:00">19:00 <i data-lucide="check"></i></button>
+                    <button type="button" role="option" aria-selected="false" data-select-option data-value="19:30">19:30 <i data-lucide="check"></i></button>
+                    <button type="button" role="option" aria-selected="false" data-select-option data-value="20:00">20:00 <i data-lucide="check"></i></button>
+                  </div>
+                </div>
+                <div class="submit-field filter-control custom-select" data-custom-select>
+                  <span>Renginio pradžia*</span>
+                  <input type="hidden" name="event_start_time" value="" data-select-value />
+                  <button class="select-field" type="button" aria-expanded="false" aria-controls="submit-start-time-select" data-select-trigger>
+                    <span data-select-label>Pasirinkite laiką</span>
+                    <i data-lucide="clock"></i>
+                  </button>
+                  <div class="select-menu" id="submit-start-time-select" role="listbox" data-select-menu hidden>
+                    <button type="button" role="option" aria-selected="false" data-select-option data-value="18:00">18:00 <i data-lucide="check"></i></button>
+                    <button type="button" role="option" aria-selected="false" data-select-option data-value="18:30">18:30 <i data-lucide="check"></i></button>
+                    <button type="button" role="option" aria-selected="false" data-select-option data-value="19:00">19:00 <i data-lucide="check"></i></button>
+                    <button type="button" role="option" aria-selected="false" data-select-option data-value="19:30">19:30 <i data-lucide="check"></i></button>
+                    <button type="button" role="option" aria-selected="false" data-select-option data-value="20:00">20:00 <i data-lucide="check"></i></button>
+                  </div>
+                </div>
+                <div class="submit-field filter-control custom-select" data-custom-select>
+                  <span>Renginio pabaiga</span>
+                  <input type="hidden" name="event_end_time" value="" data-select-value />
+                  <button class="select-field" type="button" aria-expanded="false" aria-controls="submit-end-time-select" data-select-trigger>
+                    <span data-select-label>Pasirinkite laiką</span>
+                    <i data-lucide="clock"></i>
+                  </button>
+                  <div class="select-menu" id="submit-end-time-select" role="listbox" data-select-menu hidden>
+                    <button type="button" role="option" aria-selected="false" data-select-option data-value="19:00">19:00 <i data-lucide="check"></i></button>
+                    <button type="button" role="option" aria-selected="false" data-select-option data-value="19:30">19:30 <i data-lucide="check"></i></button>
+                    <button type="button" role="option" aria-selected="false" data-select-option data-value="20:00">20:00 <i data-lucide="check"></i></button>
+                    <button type="button" role="option" aria-selected="false" data-select-option data-value="20:30">20:30 <i data-lucide="check"></i></button>
+                    <button type="button" role="option" aria-selected="false" data-select-option data-value="21:00">21:00 <i data-lucide="check"></i></button>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="submit-form-block">
+              <legend>Organizatorius</legend>
+              <label class="submit-field">
+                <span>Renginio organizatorius*</span>
+                <input type="text" name="organizer_name" placeholder="Organizatoriaus pavadinimas" required />
+              </label>
+            </fieldset>
+
+            <fieldset class="submit-form-block">
+              <legend>Kontaktai</legend>
+              <div class="submit-form-grid submit-form-grid--two">
+                <label class="submit-field">
+                  <span>Jūsų el. paštas*</span>
+                  <input type="email" name="contact_email" placeholder="jusu@pastas.lt" required />
+                </label>
+                <label class="submit-field">
+                  <span>Jūsų tel. nr.*</span>
+                  <input type="tel" name="contact_phone" placeholder="+370 600 00000" required />
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="submit-form-block">
+              <legend>Nuotrauka</legend>
+              <p class="submit-form-note">
+                Nuotrauka turi būti <strong>16:9 formato</strong>. Leidžiami formatai: JPG, PNG, WEBP. Maks. failo dydis: 10 MB.
+              </p>
+              <label class="submit-upload">
+                <input type="file" name="event_image" accept="image/jpeg,image/png,image/webp" />
+                <span class="submit-upload__icon"><i data-lucide="cloud-upload"></i></span>
+                <span>Vilkite failą čia arba</span>
+                <strong>Įkelti failą</strong>
+              </label>
+            </fieldset>
+
+            <fieldset class="submit-form-block">
+              <legend>Papildoma informacija</legend>
+              <label class="submit-field">
+                <span>Papildomi komentarai</span>
+                <textarea name="additional_comments" rows="5" placeholder="Papildoma informacija apie renginį..."></textarea>
+              </label>
+            </fieldset>
+
+            <div class="submit-event-form__footer">
+              <p>Pateiktą paraišką peržiūrėsime per 2-3 darbo dienas. Kilus klausimams, susisieksime el. paštu arba telefonu.</p>
+              <button type="submit">Pateikti renginį <i data-lucide="send"></i></button>
+            </div>
+          </form>
+        </section>
+      </main>
+
+      <footer class="site-footer" data-wp-partial="template-parts/footer/site-footer.php">
+        <div class="site-footer__bg" aria-hidden="true">
+          <img data-asset="footer-ribbon" alt="" />
+        </div>
+
+        <section class="footer-top" id="investuok">
+          <div class="footer-top__inner">
+            <a class="site-logo site-logo--footer" href="/" aria-label="KlaipėdON">
+              <img data-asset="logo-footer" alt="KlaipėdON" />
+            </a>
+
+            <div class="footer-contact" data-acf-field="contact_email">
+              <a href="mailto:info@klaipedon.lt" class="footer-contact__mail">info@klaipedon.lt</a>
+
+              <form class="newsletter" data-acf-field="contact_form_shortcode">
+                <p class="newsletter__title">Naujienlaiškio prenumerata</p>
+                <label class="newsletter__field">
+                  <span class="sr-only">El. paštas</span>
+                  <input type="email" name="email" placeholder="El. paštas" />
+                </label>
+                <button type="submit" class="newsletter__submit">Prenumeruoti <i data-lucide="chevron-right"></i></button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section class="footer-bottom" id="gyvenk" data-wp-partial="template-parts/sections/footer-cta.php">
+          <div class="footer-bottom__inner">
+            <div class="footer-bottom__headline" data-acf-field="footer_tagline">
+              <p>Sea yourself</p>
+              <p>in Klaipėda</p>
+            </div>
+
+            <div class="footer-bottom__meta">
+              <div class="footer-bottom__legal">
+                <a href="/" data-acf-field="privacy_policy_label">Privatumo politika</a>
+                <p>2026 Klaipėda On.</p>
+                <p>Visos teisės saugomos.</p>
+              </div>
+              <div class="footer-bottom__seal">
+                <img data-asset="city-seal" alt="Klaipėdos miesto ženklas" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </footer>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

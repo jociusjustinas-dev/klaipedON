@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="lt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Naujienos | KlaipėdON</title>
+    <meta
+      name="description"
+      content="KlaipėdON naujienos, miesto istorijos, turizmo centro informacija ir nauji Klaipėdos atradimai."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page-shell page-shell--news">
+      <header class="site-header" data-site-header data-wp-partial="template-parts/header/site-header.php">
+        <div class="site-header__inner">
+          <a class="site-logo" href="/" aria-label="KlaipėdON">
+            <img data-asset="logo-header" alt="KlaipėdON" />
+          </a>
+
+          <button
+            type="button"
+            class="menu-toggle"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            data-menu-toggle
+          >
+            Meniu
+          </button>
+
+          <nav class="site-nav" aria-label="Pagrindinė navigacija">
+            <div class="site-nav__item">
+              <a class="site-nav__link" href="/renginiai/">Renginiai</a>
+              <div class="site-nav__submenu">
+                <a href="/renginiai/">Visi renginiai</a>
+                <a href="/renginiai/savaitgali/">Šį savaitgalį</a>
+                <a href="/renginiai/koncertai/">Koncertai</a>
+                <a href="/renginiai/parodos/">Parodos</a>
+                <a href="/praneskite-apie-rengini/">Pranešk apie renginį</a>
+              </div>
+            </div>
+
+            <div class="site-nav__item">
+              <a class="site-nav__link" href="/#atrask" aria-current="page">Atrask</a>
+              <div class="site-nav__submenu">
+                <a href="/atrask/">Klaipėdos kryptys</a>
+                <a href="/atrask/marsrutai/">Maršrutai</a>
+                <a href="/atrask/dviraciu/">Dviračiu</a>
+                <a href="/atrask/jura/">Prie jūros</a>
+                <a href="/naujienos/" aria-current="page">Naujienos</a>
+              </div>
+            </div>
+
+            <div class="site-nav__item">
+              <a class="site-nav__link" href="/gyvenk/">Gyvenk</a>
+              <div class="site-nav__submenu">
+                <a href="/gyvenk/">Apgyvendinimas</a>
+                <a href="/gyvenk/kur-pavalgyti/">Kur pavalgyti</a>
+                <a href="/gyvenk/kaip-atvykti/">Kaip atvykti</a>
+              </div>
+            </div>
+
+            <div class="site-nav__item">
+              <a class="site-nav__link" href="/#investuok">Investuok ir dirbk</a>
+              <div class="site-nav__submenu">
+                <a href="/investuok-ir-dirbk/">Galimybės</a>
+                <a href="/investuok-ir-dirbk/verslas/">Verslui</a>
+                <a href="/investuok-ir-dirbk/karjera/">Karjera</a>
+              </div>
+            </div>
+
+            <div class="site-nav__item">
+              <a class="site-nav__link" href="/apie/">Apie</a>
+            </div>
+          </nav>
+
+          <div class="site-header__tools" aria-label="Naudotojo veiksmai">
+            <div class="site-header__icons" aria-hidden="true">
+              <i data-lucide="search"></i>
+              <i data-lucide="accessibility"></i>
+            </div>
+            <span class="site-header__divider" aria-hidden="true"></span>
+            <a class="site-lang" href="/" lang="en">EN</a>
+          </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu" data-mobile-menu>
+          <nav class="mobile-menu__nav" aria-label="Mobilioji navigacija">
+            <a href="/renginiai/">Renginiai</a>
+            <a href="/renginiai/parodos/">Parodos</a>
+            <a href="/praneskite-apie-rengini/">Pranešk apie renginį</a>
+            <a href="/#atrask">Atrask</a>
+            <a href="/atrask/dviraciu/">Dviračiu</a>
+            <a href="/naujienos/" aria-current="page">Naujienos</a>
+            <a href="/gyvenk/">Gyvenk</a>
+            <a href="/#investuok">Investuok ir dirbk</a>
+            <a href="/apie/">Apie</a>
+            <a href="/" lang="en">EN</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="news-hero" data-wp-partial="template-parts/news/archive-hero.php">
+          <div class="news-hero__media" aria-hidden="true">
+            <img data-asset="news-hero-beach" alt="" />
+          </div>
+          <div class="news-hero__veil" aria-hidden="true"></div>
+          <div class="news-hero__inner">
+            <p class="section-kicker">KlaipėdON aktualijos</p>
+            <h1 data-acf-field="news_archive_title">Kas naujo?</h1>
+          </div>
+        </section>
+
+        <section class="news-archive" data-wp-partial="template-parts/news/archive-list.php">
+          <div class="news-archive__inner">
+            <div class="news-grid" data-acf-repeater="news_items">
+              <article class="news-card">
+                <a href="/naujienos/carmina-burana/">
+                  <div class="news-card__media">
+                    <img data-asset="news-detail-carmina" alt="Carmina Burana scena elinge" />
+                  </div>
+                  <div class="news-card__body">
+                    <h2>Beribėje elingo ir uosto scenoje bus pristatyta „Carmina Burana“</h2>
+                    <p class="news-card__date"><i data-lucide="calendar-days"></i> 2023-03-13</p>
+                    <p>Klaipėdos festivalyje senasis elingas taps didinga scena Carlo Orffo kantatai ir miesto istorijai.</p>
+                  </div>
+                </a>
+              </article>
+
+              <article class="news-card">
+                <a href="/naujienos/carmina-burana/">
+                  <div class="news-card__media">
+                    <img data-asset="news-card-dunes" alt="Pajūrio kopos ir lankytojas" />
+                  </div>
+                  <div class="news-card__body">
+                    <h2>Nauji pajūrio maršrutai kviečia Klaipėdą patirti lėčiau</h2>
+                    <p class="news-card__date"><i data-lucide="calendar-days"></i> 2023-03-13</p>
+                    <p>Nuo smėlio takų iki miesto centro - naujos kryptys padeda kelionę susidėlioti pagal laiką ir nuotaiką.</p>
+                  </div>
+                </a>
+              </article>
+
+              <article class="news-card">
+                <a href="/naujienos/carmina-burana/">
+                  <div class="news-card__media">
+                    <img data-asset="news-card-pattern" alt="Klaipėdos vizualinio identiteto motyvai" />
+                  </div>
+                  <div class="news-card__body">
+                    <h2>Klaipėdos pasakojimai įgauna naują vizualinį ritmą</h2>
+                    <p class="news-card__date"><i data-lucide="calendar-days"></i> 2023-03-13</p>
+                    <p>Miesto ženklai, spalvos ir istorijos jungiamos į vientisą patirtį lankytojams ir vietiniams.</p>
+                  </div>
+                </a>
+              </article>
+
+              <article class="news-card">
+                <a href="/naujienos/carmina-burana/">
+                  <div class="news-card__media">
+                    <img data-asset="news-card-stage" alt="Klaipėdos kultūros scena" />
+                  </div>
+                  <div class="news-card__body">
+                    <h2>Kultūros savaitgalis grįžta į miesto erdves</h2>
+                    <p class="news-card__date"><i data-lucide="calendar-days"></i> 2023-03-13</p>
+                    <p>Atviros scenos, koncertai ir parodos kviečia miestą atrasti per gyvą kultūros pulsą.</p>
+                  </div>
+                </a>
+              </article>
+
+              <article class="news-card">
+                <a href="/naujienos/carmina-burana/">
+                  <div class="news-card__media">
+                    <img data-asset="news-card-logo" alt="KlaipėdON miesto ženklas" />
+                  </div>
+                  <div class="news-card__body">
+                    <h2>KlaipėdON platforma tampa patogiu miesto planavimo įrankiu</h2>
+                    <p class="news-card__date"><i data-lucide="calendar-days"></i> 2023-03-13</p>
+                    <p>Vienoje vietoje jungiami renginiai, maršrutai, apgyvendinimas ir idėjos, ką veikti mieste.</p>
+                  </div>
+                </a>
+              </article>
+
+              <article class="news-card">
+                <a href="/naujienos/carmina-burana/">
+                  <div class="news-card__media">
+                    <img data-asset="news-card-museum" alt="Muziejaus ekspozicija Klaipėdoje" />
+                  </div>
+                  <div class="news-card__body">
+                    <h2>Muziejai ir teatrai kviečia į naujas edukacijas</h2>
+                    <p class="news-card__date"><i data-lucide="calendar-days"></i> 2023-03-13</p>
+                    <p>Parodos, spektakliai ir mažos miesto istorijos padeda Klaipėdą pamatyti iš arčiau.</p>
+                  </div>
+                </a>
+              </article>
+            </div>
+
+            <nav class="news-pagination" aria-label="Naujienų puslapiai">
+              <a class="is-active" href="/naujienos/" aria-current="page">1</a>
+              <a href="/naujienos/page/2/">2</a>
+              <a href="/naujienos/page/3/">3</a>
+              <span>...</span>
+              <a href="/naujienos/page/26/">26</a>
+            </nav>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer" data-wp-partial="template-parts/footer/site-footer.php">
+        <div class="site-footer__bg" aria-hidden="true">
+          <img data-asset="footer-ribbon" alt="" />
+        </div>
+
+        <section class="footer-top" id="investuok">
+          <div class="footer-top__inner">
+            <a class="site-logo site-logo--footer" href="/" aria-label="KlaipėdON">
+              <img data-asset="logo-footer" alt="KlaipėdON" />
+            </a>
+
+            <div class="footer-contact" data-acf-field="contact_email">
+              <a href="mailto:info@klaipedon.lt" class="footer-contact__mail">info@klaipedon.lt</a>
+
+              <form class="newsletter" data-acf-field="contact_form_shortcode">
+                <p class="newsletter__title">Naujienlaiškio prenumerata</p>
+                <label class="newsletter__field">
+                  <span class="sr-only">El. paštas</span>
+                  <input type="email" name="email" placeholder="El. paštas" />
+                </label>
+                <button type="submit" class="newsletter__submit">Prenumeruoti <i data-lucide="chevron-right"></i></button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section class="footer-bottom" id="gyvenk" data-wp-partial="template-parts/sections/footer-cta.php">
+          <div class="footer-bottom__inner">
+            <div class="footer-bottom__headline" data-acf-field="footer_tagline">
+              <p>Sea yourself</p>
+              <p>in Klaipėda</p>
+            </div>
+
+            <div class="footer-bottom__meta">
+              <div class="footer-bottom__legal">
+                <a href="/" data-acf-field="privacy_policy_label">Privatumo politika</a>
+                <p>2026 Klaipėda On.</p>
+                <p>Visos teisės saugomos.</p>
+              </div>
+              <div class="footer-bottom__seal">
+                <img data-asset="city-seal" alt="Klaipėdos miesto ženklas" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </footer>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="lt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KlaipėdON</title>
+    <meta
+      name="description"
+      content="KlaipėdON landing page, paruoštas tolimesniam WordPress integravimui."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header" data-site-header data-wp-partial="template-parts/header/site-header.php">
+        <div class="site-header__inner">
+          <a class="site-logo" href="#top" aria-label="KlaipėdON">
+            <img data-asset="logo-header" alt="KlaipėdON" />
+          </a>
+
+          <button
+            type="button"
+            class="menu-toggle"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            data-menu-toggle
+          >
+            Meniu
+          </button>
+
+          <nav class="site-nav" aria-label="Pagrindinė navigacija">
+            <div class="site-nav__item">
+              <a class="site-nav__link" href="#renginiai">Renginiai</a>
+              <div class="site-nav__submenu">
+                <a href="/renginiai/">Visi renginiai</a>
+                <a href="/renginiai/savaitgali/">Šį savaitgalį</a>
+                <a href="/renginiai/koncertai/">Koncertai</a>
+                <a href="/renginiai/parodos/">Parodos</a>
+                <a href="/praneskite-apie-rengini/">Pranešk apie renginį</a>
+              </div>
+            </div>
+
+            <div class="site-nav__item">
+              <a class="site-nav__link" href="#atrask">Atrask</a>
+              <div class="site-nav__submenu">
+                <a href="/atrask/">Klaipėdos kryptys</a>
+                <a href="/atrask/marsrutai/">Maršrutai</a>
+                <a href="/atrask/dviraciu/">Dviračiu</a>
+                <a href="/atrask/jura/">Prie jūros</a>
+                <a href="/naujienos/">Naujienos</a>
+              </div>
+            </div>
+
+            <div class="site-nav__item">
+              <a class="site-nav__link" href="/gyvenk/">Gyvenk</a>
+              <div class="site-nav__submenu">
+                <a href="/gyvenk/">Apgyvendinimas</a>
+                <a href="/gyvenk/kur-pavalgyti/">Kur pavalgyti</a>
+                <a href="/gyvenk/kaip-atvykti/">Kaip atvykti</a>
+              </div>
+            </div>
+
+            <div class="site-nav__item">
+              <a class="site-nav__link" href="#investuok">Investuok ir dirbk</a>
+              <div class="site-nav__submenu">
+                <a href="/investuok-ir-dirbk/">Galimybės</a>
+                <a href="/investuok-ir-dirbk/verslas/">Verslui</a>
+                <a href="/investuok-ir-dirbk/karjera/">Karjera</a>
+              </div>
+            </div>
+
+            <div class="site-nav__item">
+              <a class="site-nav__link" href="/apie/">Apie</a>
+            </div>
+          </nav>
+
+          <div class="site-header__tools" aria-label="Naudotojo veiksmai">
+            <div class="site-header__icons" aria-hidden="true">
+              <i data-lucide="search"></i>
+              <i data-lucide="accessibility"></i>
+            </div>
+            <span class="site-header__divider" aria-hidden="true"></span>
+            <a class="site-lang" href="/" lang="en">EN</a>
+          </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu" data-mobile-menu>
+          <nav class="mobile-menu__nav" aria-label="Mobilioji navigacija">
+            <a href="#renginiai">Renginiai</a>
+            <a href="/renginiai/parodos/">Parodos</a>
+            <a href="/praneskite-apie-rengini/">Pranešk apie renginį</a>
+            <a href="#atrask">Atrask</a>
+            <a href="/atrask/dviraciu/">Dviračiu</a>
+            <a href="/naujienos/">Naujienos</a>
+            <a href="/gyvenk/">Gyvenk</a>
+            <a href="#investuok">Investuok ir dirbk</a>
+            <a href="/apie/">Apie</a>
+            <a href="/" lang="en">EN</a>
+          </nav>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero" data-wp-partial="template-parts/sections/hero.php">
+          <div class="hero__media" aria-hidden="true">
+            <img data-asset="hero-bg" alt="" />
+          </div>
+          <div class="hero__veil" aria-hidden="true"></div>
+          <div class="hero__inner">
+            <h1 class="hero__title" data-acf-field="hero_title">
+              <span>Dream</span><em>ON</em>
+            </h1>
+          </div>
+        </section>
+
+        <section
+          class="discover-list"
+          id="atrask"
+          data-wp-partial="template-parts/sections/discover-links.php"
+          data-acf-repeater="discover_links"
+        >
+          <div class="discover-list__inner">
+            <div class="accordion-hover-preview" data-accordion-hover-preview aria-hidden="true">
+              <img data-accordion-hover-image alt="" />
+            </div>
+
+            <div class="events-panel" id="renginiai" data-wp-partial="template-parts/sections/events-panel.php">
+              <button
+                type="button"
+                class="events-panel__trigger"
+                aria-expanded="false"
+                aria-controls="events-panel-content"
+                data-preview-asset="event-kamaniu-silelis"
+                data-accordion-trigger
+                data-acf-field="events_title"
+              >
+                Renginiai
+              </button>
+
+              <div id="events-panel-content" class="events-panel__content" data-accordion-panel hidden>
+                <div class="events-carousel" data-events-carousel>
+                  <div class="events-rail" data-events-rail data-acf-repeater="events">
+                    <article class="archive-event-card" data-event-card>
+                    <a href="/renginiai/kamaniu-silelis/">
+                      <div class="archive-event-card__media">
+                        <img data-asset="event-aludariai" alt="Aludarių dienos šventė" />
+                      </div>
+                      <div class="archive-event-card__body">
+                        <time datetime="2026-06-09">06.09</time>
+                        <h2>Aludarių dienos šventė</h2>
+                        <p>Vasaros vakaras su muzika, miestu ir laisvu ritmu prie vandens.</p>
+                        <dl>
+                          <div><dt><i data-lucide="calendar-days"></i><span>Kada</span></dt><dd>Birželio 9 d. 19 val.</dd></div>
+                          <div><dt><i data-lucide="map-pin"></i><span>Kur</span></dt><dd>Klaipėdos senamiestis</dd></div>
+                          <div><dt><i data-lucide="ticket"></i><span>Kaina</span></dt><dd>Nemokamas</dd></div>
+                        </dl>
+                      </div>
+                    </a>
+                    </article>
+
+                    <article class="archive-event-card" data-event-card>
+                    <a href="/renginiai/kamaniu-silelis/">
+                      <div class="archive-event-card__media">
+                        <img data-asset="event-kamaniu-silelis" alt="Grupės Kamanių šilelis koncertas" />
+                      </div>
+                      <div class="archive-event-card__body">
+                        <time datetime="2026-06-18">06.18</time>
+                        <h2>Grupės “Kamanių šilelis” koncertas</h2>
+                        <p>Intymus koncertas vakarui, kai miestas nori sulėtėti, bet ne nutilti.</p>
+                        <dl>
+                          <div><dt><i data-lucide="calendar-days"></i><span>Kada</span></dt><dd>Birželio 18 d. 20 val.</dd></div>
+                          <div><dt><i data-lucide="map-pin"></i><span>Kur</span></dt><dd>Kultūros fabrikas</dd></div>
+                          <div><dt><i data-lucide="ticket"></i><span>Kaina</span></dt><dd>Renginys mokamas</dd></div>
+                        </dl>
+                      </div>
+                    </a>
+                    </article>
+
+                    <article class="archive-event-card" data-event-card>
+                    <a href="/renginiai/kamaniu-silelis/">
+                      <div class="archive-event-card__media">
+                        <img data-asset="event-godo" alt="Spektaklis Belaukiant Godo Klaipėdos jaunimo teatre" />
+                      </div>
+                      <div class="archive-event-card__body">
+                        <time datetime="2026-07-02">07.02</time>
+                        <h2>Spektaklis „Belaukiant Godo“</h2>
+                        <p>Klaipėdos jaunimo teatro vakaras ieškantiems stipresnio scenos pulso.</p>
+                        <dl>
+                          <div><dt><i data-lucide="calendar-days"></i><span>Kada</span></dt><dd>Liepos 2 d. 18 val.</dd></div>
+                          <div><dt><i data-lucide="map-pin"></i><span>Kur</span></dt><dd>Klaipėdos jaunimo teatras</dd></div>
+                          <div><dt><i data-lucide="ticket"></i><span>Kaina</span></dt><dd>Renginys mokamas</dd></div>
+                        </dl>
+                      </div>
+                    </a>
+                    </article>
+
+                    <article class="archive-event-card" data-event-card>
+                    <a href="/renginiai/kamaniu-silelis/">
+                      <div class="archive-event-card__media">
+                        <img data-asset="event-juros-svente" alt="Jūros šventei 90" />
+                      </div>
+                      <div class="archive-event-card__body">
+                        <time datetime="2026-07-26">07.26-28</time>
+                        <h2>Jūros šventei 90</h2>
+                        <p>Didysis miesto savaitgalis, kuriame jūra tampa pagrindine scena.</p>
+                        <dl>
+                          <div><dt><i data-lucide="calendar-days"></i><span>Kada</span></dt><dd>Liepos 26-28 d.</dd></div>
+                          <div><dt><i data-lucide="map-pin"></i><span>Kur</span></dt><dd>Kruizinių laivų terminalas</dd></div>
+                          <div><dt><i data-lucide="ticket"></i><span>Kaina</span></dt><dd>Nemokamas</dd></div>
+                        </dl>
+                      </div>
+                    </a>
+                    </article>
+
+                    <article class="archive-event-card" data-event-card>
+                    <a href="/renginiai/kamaniu-silelis/">
+                      <div class="archive-event-card__media">
+                        <img data-asset="event-biplan" alt="Biplan koncertas" />
+                      </div>
+                      <div class="archive-event-card__body">
+                        <time datetime="2026-07-02">07.02</time>
+                        <h2>Biplan koncertas</h2>
+                        <p>Atviras vasaros koncertas su lengva nostalgija ir miesto vėju.</p>
+                        <dl>
+                          <div><dt><i data-lucide="calendar-days"></i><span>Kada</span></dt><dd>Liepos 2 d. 21 val.</dd></div>
+                          <div><dt><i data-lucide="map-pin"></i><span>Kur</span></dt><dd>Vasaros estrada</dd></div>
+                          <div><dt><i data-lucide="ticket"></i><span>Kaina</span></dt><dd>Renginys mokamas</dd></div>
+                        </dl>
+                      </div>
+                    </a>
+                    </article>
+                  </div>
+
+                  <div class="events-panel__footer">
+                    <div class="events-carousel__controls" aria-label="Renginių karuselės valdymas">
+                      <button type="button" aria-label="Ankstesni renginiai" data-events-prev>
+                        <i data-lucide="chevron-left"></i>
+                      </button>
+                      <button type="button" aria-label="Kiti renginiai" data-events-next>
+                        <i data-lucide="chevron-right"></i>
+                      </button>
+                    </div>
+
+                    <a class="events-panel__all" href="/renginiai/" data-acf-field="events_archive_label">Visi renginiai <i data-lucide="chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-panel" id="naujienos" data-wp-partial="template-parts/sections/info-panel.php">
+              <button
+                type="button"
+                class="info-panel__trigger"
+                aria-expanded="false"
+                aria-controls="news-panel-content"
+                data-preview-asset="info-panel-image"
+                data-accordion-trigger
+                data-acf-field="news_title"
+              >
+                Naujienos
+              </button>
+
+              <div id="news-panel-content" class="info-panel__content" data-accordion-panel hidden>
+                <div class="info-panel__copy">
+                  <p data-acf-field="news_text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                  <a href="/naujienos/" data-acf-field="news_link_label">Daugiau naujienų <i data-lucide="chevron-right"></i></a>
+                </div>
+                <img data-asset="info-panel-image" alt="Klaipėdos pajūris" />
+              </div>
+            </div>
+
+            <div class="info-panel" id="gastro" data-wp-partial="template-parts/sections/info-panel.php">
+              <button
+                type="button"
+                class="info-panel__trigger"
+                aria-expanded="false"
+                aria-controls="gastro-panel-content"
+                data-preview-asset="event-juros-svente"
+                data-accordion-trigger
+                data-acf-field="gastro_title"
+              >
+                Gastro patirtys
+              </button>
+
+              <div id="gastro-panel-content" class="info-panel__content" data-accordion-panel hidden>
+                <div class="info-panel__copy">
+                  <p data-acf-field="gastro_text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                  <a href="/gastro-patirtys/" data-acf-field="gastro_link_label">Daugiau patirčių <i data-lucide="chevron-right"></i></a>
+                </div>
+                <img data-asset="info-panel-image" alt="Klaipėdos pajūris" />
+              </div>
+            </div>
+
+            <div class="info-panel" id="veikti" data-wp-partial="template-parts/sections/info-panel.php">
+              <button
+                type="button"
+                class="info-panel__trigger"
+                aria-expanded="false"
+                aria-controls="activities-panel-content"
+                data-preview-asset="event-godo"
+                data-accordion-trigger
+                data-acf-field="activities_title"
+              >
+                Ką veikti
+              </button>
+
+              <div id="activities-panel-content" class="info-panel__content" data-accordion-panel hidden>
+                <div class="info-panel__copy">
+                  <p data-acf-field="activities_text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                  <a href="/ka-veikti/" data-acf-field="activities_link_label">Daugiau veiklų <i data-lucide="chevron-right"></i></a>
+                </div>
+                <img data-asset="info-panel-image" alt="Klaipėdos pajūris" />
+              </div>
+            </div>
+
+            <div class="info-panel" id="pamatyti" data-wp-partial="template-parts/sections/info-panel.php">
+              <button
+                type="button"
+                class="info-panel__trigger"
+                aria-expanded="false"
+                aria-controls="see-panel-content"
+                data-preview-asset="event-biplan"
+                data-accordion-trigger
+                data-acf-field="see_title"
+              >
+                Ką pamatyti
+              </button>
+
+              <div id="see-panel-content" class="info-panel__content" data-accordion-panel hidden>
+                <div class="info-panel__copy">
+                  <p data-acf-field="see_text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                  <a href="/ka-pamatyti/" data-acf-field="see_link_label">Daugiau vietų <i data-lucide="chevron-right"></i></a>
+                </div>
+                <img data-asset="info-panel-image" alt="Klaipėdos pajūris" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="home-attractions" data-attractions-slider data-wp-partial="template-parts/sections/home-attractions.php">
+          <div class="home-attractions__inner">
+            <div class="home-attractions__intro">
+              <h2 data-acf-field="home_attractions_title">Atraskite geriausius Klaipėdos lankytinus objektus ir pramogas</h2>
+              <p data-acf-field="home_attractions_intro">
+                Nesvarbu, ar jus domina istorija, kultūra, ar gamta, mes jums padėsime. Tiesiog peržiūrėkite temas, nuotraukas ir spustelėkite, kad sužinotumėte daugiau apie kiekvieną lankytiną vietą.
+              </p>
+            </div>
+
+            <div class="home-attractions__layout">
+              <div class="home-attractions__tabs" role="tablist" aria-label="Lankytinų vietų kategorijos" data-acf-repeater="attraction_categories">
+                <button type="button" role="tab" aria-selected="true" data-attraction-tab data-index="0">TOP</button>
+                <button type="button" role="tab" aria-selected="false" data-attraction-tab data-index="1">Kalbančios skulptūros</button>
+                <button type="button" role="tab" aria-selected="false" data-attraction-tab data-index="2">Lankytinos vietos</button>
+                <button type="button" role="tab" aria-selected="false" data-attraction-tab data-index="3">Muziejai ir teatrai</button>
+              </div>
+
+              <div class="home-attractions__slider">
+                <div class="home-attractions__image-wrap">
+                  <img data-attraction-image data-asset="attractions-top" alt="Klaipėdos lankytina vieta" />
+                  <div class="home-attractions__arrows" aria-label="Sliderio valdymas">
+                    <button type="button" aria-label="Ankstesnė kategorija" data-attraction-prev>
+                      <i data-lucide="chevron-left"></i>
+                    </button>
+                    <button type="button" aria-label="Kita kategorija" data-attraction-next>
+                      <i data-lucide="chevron-right"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="home-attractions__body">
+                  <p data-attraction-copy>
+                    Klaipėdos lankytinos vietos - tai, ką būtina pamatyti kiekvienam, atvykusiam į miestą! Nuo istorinio senamiesčio su jo žavingomis gatvelėmis ir architektūra iki Kuršių nerijos - čia yra ką tyrinėti.
+                  </p>
+                  <a href="/ka-pamatyti/" data-attraction-link>Sužinokite daugiau</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script type="application/json" data-attractions-data>
+            [
+              {
+                "label": "TOP",
+                "asset": "attractions-top",
+                "alt": "Klaipėdos lankytina vieta",
+                "copy": "Klaipėdos lankytinos vietos - tai, ką būtina pamatyti kiekvienam, atvykusiam į miestą! Nuo istorinio senamiesčio su jo žavingomis gatvelėmis ir architektūra iki Kuršių nerijos - čia yra ką tyrinėti.",
+                "url": "/ka-pamatyti/"
+              },
+              {
+                "label": "Kalbančios skulptūros",
+                "asset": "event-juros-svente",
+                "alt": "Kalbančios skulptūros Klaipėdoje",
+                "copy": "Mieste pasislėpusios istorijos atsiveria per skulptūras, garsus ir mažus atradimus, kuriuos patogu jungti į pasivaikščiojimą senamiestyje.",
+                "url": "/atrask/kalbancios-skulpturos/"
+              },
+              {
+                "label": "Lankytinos vietos",
+                "asset": "hero-bg",
+                "alt": "Klaipėdos pajūris",
+                "copy": "Nuo pajūrio takų iki miesto centro objektų - susidėliokite kryptį pagal laiką, nuotaiką ir norimą miesto tempą.",
+                "url": "/atrask/lankytinos-vietos/"
+              },
+              {
+                "label": "Muziejai ir teatrai",
+                "asset": "event-godo",
+                "alt": "Klaipėdos kultūros scena",
+                "copy": "Kultūros vietos padeda pamatyti miestą giliau: parodos, spektakliai, edukacijos ir scenos, kuriose Klaipėda kalba savaip.",
+                "url": "/atrask/muziejai-ir-teatrai/"
+              }
+            ]
+          </script>
+        </section>
+
+        <section class="home-guide" data-wp-partial="template-parts/sections/home-guide.php">
+          <div class="home-guide__inner">
+            <div class="home-guide__intro">
+              <h2 data-acf-field="home_guide_title">Maistas. Pramogos. Nakvynė. Viskas vienoje vietoje.</h2>
+              <p data-acf-field="home_guide_intro">
+                Išsirinkite, ko reikia jūsų kelionei: veiklos idėjų, vietų pavalgyti ar patogių nakvynės pasiūlymų. Klaipėda lengviau susidėlioja, kai viskas yra viename ritme.
+              </p>
+            </div>
+
+            <div class="home-guide__list" data-acf-repeater="home_guide_items">
+              <article class="home-guide-card">
+                <div class="home-guide-card__media home-guide-card__media--right-step">
+                  <img data-asset="home-guide-activity" alt="Judėjimas mieste" />
+                </div>
+                <div class="home-guide-card__content">
+                  <h3>Ką veikti?</h3>
+                  <p>
+                    Renginiai, pasivaikščiojimai, scenos ir mažos miesto patirtys, kurios padeda Klaipėdą pajusti ne tik pamatyti.
+                  </p>
+                  <a href="/ka-veikti/">Sužinokite daugiau</a>
+                </div>
+              </article>
+
+              <article class="home-guide-card home-guide-card--reverse">
+                <div class="home-guide-card__content">
+                  <h3>Kur pavalgyti?</h3>
+                  <p>
+                    Vietos kavai, vakarienei ar ilgesniam pasisėdėjimui, kai norisi miesto skonį atrasti per žmones ir atmosferą.
+                  </p>
+                  <a href="/gastro-patirtys/">Sužinokite daugiau</a>
+                </div>
+                <div class="home-guide-card__media home-guide-card__media--left-step">
+                  <img data-asset="home-guide-food" alt="Vakarienė Klaipėdoje" />
+                </div>
+              </article>
+
+              <article class="home-guide-card">
+                <div class="home-guide-card__media home-guide-card__media--right-step">
+                  <img data-asset="home-guide-stay" alt="Nakvynė prie jūros" />
+                </div>
+                <div class="home-guide-card__content">
+                  <h3>Kur apsistoti?</h3>
+                  <p>
+                    Viešbučiai, apartamentai ir ramesnės vietos, iš kurių patogu pradėti rytą mieste arba prie jūros.
+                  </p>
+                  <a href="/gyvenk/">Sužinokite daugiau</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="home-news" data-home-news-tabs data-wp-partial="template-parts/sections/home-news.php">
+          <div class="home-news__inner">
+            <div class="home-news__head">
+              <div class="home-news__copy">
+                <h2 data-acf-field="home_news_title">Nepraleiskite nė vienos akimirkos: Klaipėdos ritmas vienoje vietoje.</h2>
+                <a href="/naujienos/" data-acf-field="home_news_archive_label">Visos naujienos</a>
+              </div>
+
+              <div class="home-news__tabs" role="tablist" aria-label="Naujienų kategorijos">
+                <button type="button" class="is-active" id="home-news-tab-tourism" role="tab" aria-selected="true" aria-controls="home-news-panel-tourism" data-home-news-tab>Turizmo centro gyvenimas</button>
+                <button type="button" id="home-news-tab-news" role="tab" aria-selected="false" aria-controls="home-news-panel-news" data-home-news-tab>Naujienos</button>
+              </div>
+            </div>
+
+            <div class="home-news__grid" id="home-news-panel-tourism" role="tabpanel" aria-labelledby="home-news-tab-tourism" data-home-news-panel data-acf-repeater="home_news_tourism_items">
+              <article class="home-news-card">
+                <a href="/naujienos/carmina-burana/">
+                  <div class="home-news-card__media">
+                    <img data-asset="home-news-route" alt="Miesto maršrutas Klaipėdoje" />
+                  </div>
+                  <div class="home-news-card__body">
+                    <h3>1923 m. maršrutas jau pasiekiamas visiems!</h3>
+                    <p class="home-news-card__date"><i data-lucide="calendar-days"></i> Kovo 23 d. 17 val.</p>
+                    <p>2023 metus LR Seimas paskelbė Klaipėdos krašto metais, todėl miestas kviečia atrasti istoriją nauju maršrutu.</p>
+                    <span>Sužinokite daugiau</span>
+                  </div>
+                </a>
+              </article>
+
+              <article class="home-news-card">
+                <a href="/naujienos/carmina-burana/">
+                  <div class="home-news-card__media">
+                    <img data-asset="home-news-port" alt="Klaipėdos uosto kranai" />
+                  </div>
+                  <div class="home-news-card__body">
+                    <h3>Uosto istorijos grįžta į miesto pasakojimus.</h3>
+                    <p class="home-news-card__date"><i data-lucide="calendar-days"></i> Balandžio 4 d. 12 val.</p>
+                    <p>Naujos ekskursijos ir edukacijos padeda pamatyti Klaipėdą per krantines, laivus ir žmones, kurie kūrė miestą.</p>
+                    <span>Sužinokite daugiau</span>
+                  </div>
+                </a>
+              </article>
+
+              <article class="home-news-card">
+                <a href="/naujienos/carmina-burana/">
+                  <div class="home-news-card__media">
+                    <img data-asset="home-news-city" alt="Žmogus prie miesto sienos" />
+                  </div>
+                  <div class="home-news-card__body">
+                    <h3>Savaitgalio idėjos: nuo centro iki pajūrio.</h3>
+                    <p class="home-news-card__date"><i data-lucide="calendar-days"></i> Gegužės 12 d. 10 val.</p>
+                    <p>Trumpas gidas tiems, kurie nori miestą patirti lengvai: pasivaikščiojimai, skoniai, kultūra ir lėtesni sustojimai.</p>
+                    <span>Sužinokite daugiau</span>
+                  </div>
+                </a>
+              </article>
+            </div>
+
+            <div class="home-news__grid" id="home-news-panel-news" role="tabpanel" aria-labelledby="home-news-tab-news" data-home-news-panel data-acf-repeater="home_news_items" hidden>
+              <article class="home-news-card">
+                <a href="/naujienos/carmina-burana/">
+                  <div class="home-news-card__media">
+                    <img data-asset="event-juros-svente" alt="Jūros šventės iliustracija" />
+                  </div>
+                  <div class="home-news-card__body">
+                    <h3>Vasaros sezonas Klaipėdoje prasideda prie vandens.</h3>
+                    <p class="home-news-card__date"><i data-lucide="calendar-days"></i> Birželio 6 d. 11 val.</p>
+                    <p>Miestas ruošia naujus maršrutus, renginius ir patirtis tiems, kurie nori vasarą pradėti lėtesniu pajūrio ritmu.</p>
+                    <span>Sužinokite daugiau</span>
+                  </div>
+                </a>
+              </article>
+
+              <article class="home-news-card">
+                <a href="/naujienos/carmina-burana/">
+                  <div class="home-news-card__media">
+                    <img data-asset="event-godo" alt="Klaipėdos teatro scena" />
+                  </div>
+                  <div class="home-news-card__body">
+                    <h3>Kultūros savaitgalis sugrįžta į miesto erdves.</h3>
+                    <p class="home-news-card__date"><i data-lucide="calendar-days"></i> Birželio 14 d. 15 val.</p>
+                    <p>Nuo kamerinių koncertų iki atvirų scenų - Klaipėdos kultūros kalendorius pildosi naujais vakarais.</p>
+                    <span>Sužinokite daugiau</span>
+                  </div>
+                </a>
+              </article>
+
+              <article class="home-news-card">
+                <a href="/naujienos/carmina-burana/">
+                  <div class="home-news-card__media">
+                    <img data-asset="home-news-port" alt="Klaipėdos uosto panorama" />
+                  </div>
+                  <div class="home-news-card__body">
+                    <h3>Nauji miesto maršrutai kviečia atrasti krantines.</h3>
+                    <p class="home-news-card__date"><i data-lucide="calendar-days"></i> Birželio 20 d. 9 val.</p>
+                    <p>Patogūs pasivaikščiojimai sujungia istoriją, uostą, architektūrą ir vietas, kuriose Klaipėda keičia tempą.</p>
+                    <span>Sužinokite daugiau</span>
+                  </div>
+                </a>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer" data-wp-partial="template-parts/footer/site-footer.php">
+        <div class="site-footer__bg" aria-hidden="true">
+          <img data-asset="footer-ribbon" alt="" />
+        </div>
+
+        <section class="footer-top" id="investuok">
+          <div class="footer-top__inner">
+            <a class="site-logo site-logo--footer" href="#top" aria-label="KlaipėdON">
+              <img data-asset="logo-footer" alt="KlaipėdON" />
+            </a>
+
+            <div class="footer-contact" data-acf-field="contact_email">
+              <a href="mailto:info@klaipedon.lt" class="footer-contact__mail">info@klaipedon.lt</a>
+
+              <form class="newsletter" data-acf-field="contact_form_shortcode">
+                <p class="newsletter__title">Naujienlaiškio prenumerata</p>
+                <label class="newsletter__field">
+                  <span class="sr-only">El. paštas</span>
+                  <input type="email" name="email" placeholder="El. paštas" />
+                </label>
+                <button type="submit" class="newsletter__submit">Prenumeruoti <i data-lucide="chevron-right"></i></button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section class="footer-bottom" id="gyvenk" data-wp-partial="template-parts/sections/footer-cta.php">
+          <div class="footer-bottom__inner">
+            <div class="footer-bottom__headline" data-acf-field="footer_tagline">
+              <p>Sea yourself</p>
+              <p>in Klaipėda</p>
+            </div>
+
+            <div class="footer-bottom__meta">
+              <div class="footer-bottom__legal">
+                <a href="/" data-acf-field="privacy_policy_label">Privatumo politika</a>
+                <p>2026 Klaipėda On.</p>
+                <p>Visos teisės saugomos.</p>
+              </div>
+              <div class="footer-bottom__seal">
+                <img data-asset="city-seal" alt="Klaipėdos miesto ženklas" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </footer>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="lt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parodos | KlaipėdON</title>
+    <meta
+      name="description"
+      content="KlaipėdON parodų puslapis: galerijos, muziejai ir vykstančios parodos Klaipėdoje."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page-shell page-shell--exhibitions">
+      <header class="site-header" data-site-header data-wp-partial="template-parts/header/site-header.php">
+        <div class="site-header__inner">
+          <a class="site-logo" href="/" aria-label="KlaipėdON">
+            <img data-asset="logo-header" alt="KlaipėdON" />
+          </a>
+
+          <button
+            type="button"
+            class="menu-toggle"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            data-menu-toggle
+          >
+            Meniu
+          </button>
+
+          <nav class="site-nav" aria-label="Pagrindinė navigacija">
+            <div class="site-nav__item">
+              <a class="site-nav__link" href="/renginiai/" aria-current="page">Renginiai</a>
+              <div class="site-nav__submenu">
+                <a href="/renginiai/">Visi renginiai</a>
+                <a href="/renginiai/savaitgali/">Šį savaitgalį</a>
+                <a href="/renginiai/koncertai/">Koncertai</a>
+                <a href="/renginiai/parodos/" aria-current="page">Parodos</a>
+                <a href="/praneskite-apie-rengini/">Pranešk apie renginį</a>
+              </div>
+            </div>
+
+            <div class="site-nav__item">
+              <a class="site-nav__link" href="/#atrask">Atrask</a>
+              <div class="site-nav__submenu">
+                <a href="/atrask/">Klaipėdos kryptys</a>
+                <a href="/atrask/marsrutai/">Maršrutai</a>
+                <a href="/atrask/dviraciu/">Dviračiu</a>
+                <a href="/atrask/jura/">Prie jūros</a>
+                <a href="/naujienos/">Naujienos</a>
+              </div>
+            </div>
+
+            <div class="site-nav__item">
+              <a class="site-nav__link" href="/gyvenk/">Gyvenk</a>
+              <div class="site-nav__submenu">
+                <a href="/gyvenk/">Apgyvendinimas</a>
+                <a href="/gyvenk/kur-pavalgyti/">Kur pavalgyti</a>
+                <a href="/gyvenk/kaip-atvykti/">Kaip atvykti</a>
+              </div>
+            </div>
+
+            <div class="site-nav__item">
+              <a class="site-nav__link" href="/#investuok">Investuok ir dirbk</a>
+              <div class="site-nav__submenu">
+                <a href="/investuok-ir-dirbk/">Galimybės</a>
+                <a href="/investuok-ir-dirbk/verslas/">Verslui</a>
+                <a href="/investuok-ir-dirbk/karjera/">Karjera</a>
+              </div>
+            </div>
+
+            <div class="site-nav__item">
+              <a class="site-nav__link" href="/apie/">Apie</a>
+            </div>
+          </nav>
+
+          <div class="site-header__tools" aria-label="Naudotojo veiksmai">
+            <div class="site-header__icons" aria-hidden="true">
+              <i data-lucide="search"></i>
+              <i data-lucide="accessibility"></i>
+            </div>
+            <span class="site-header__divider" aria-hidden="true"></span>
+            <a class="site-lang" href="/" lang="en">EN</a>
+          </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu" data-mobile-menu>
+          <nav class="mobile-menu__nav" aria-label="Mobilioji navigacija">
+            <a href="/renginiai/">Renginiai</a>
+            <a href="/renginiai/parodos/" aria-current="page">Parodos</a>
+            <a href="/praneskite-apie-rengini/">Pranešk apie renginį</a>
+            <a href="/#atrask">Atrask</a>
+            <a href="/atrask/dviraciu/">Dviračiu</a>
+            <a href="/naujienos/">Naujienos</a>
+            <a href="/gyvenk/">Gyvenk</a>
+            <a href="/#investuok">Investuok ir dirbk</a>
+            <a href="/apie/">Apie</a>
+            <a href="/" lang="en">EN</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="exhibitions-hero" data-wp-partial="template-parts/exhibitions/archive-hero.php">
+          <div class="exhibitions-hero__media" aria-hidden="true">
+            <img data-asset="exhibition-medziai" alt="" />
+          </div>
+          <div class="exhibitions-hero__inner">
+            <p class="section-kicker">Vykstančios parodos</p>
+            <h1 data-acf-field="exhibitions_archive_title">Parodos Klaipėdoje</h1>
+            <p data-acf-field="exhibitions_archive_intro">
+              Galerijos, muziejai ir erdvės, kuriose miesto istorijos, menas ir šiuolaikinės idėjos pasirodo gyvai.
+            </p>
+          </div>
+        </section>
+
+        <section class="exhibitions-list" data-wp-partial="template-parts/exhibitions/venue-list.php">
+          <div class="exhibitions-list__inner">
+            <header class="exhibition-venue" data-acf-group="exhibition_venue">
+              <div>
+                <p class="section-kicker">Galerija</p>
+                <h2 data-acf-field="venue_title">Prano Domšaičio galerija (LNDM)</h2>
+              </div>
+              <div class="exhibition-venue__meta">
+                <a href="https://www.google.com/maps/search/?api=1&query=Liep%C5%B3+g.+33,+Klaip%C4%97da" target="_blank" rel="noreferrer">
+                  <i data-lucide="map-pin"></i> Liepų g. 33
+                </a>
+                <a href="https://www.lndm.lt/" target="_blank" rel="noreferrer">
+                  <i data-lucide="globe"></i> Galerijos svetainė
+                </a>
+              </div>
+            </header>
+
+            <div class="exhibition-items" data-acf-repeater="exhibition_items">
+              <article class="exhibition-card">
+                <div class="exhibition-card__media">
+                  <img data-asset="exhibition-domsaitis" alt="Vytauto Kašubos parodos archyvinė nuotrauka" />
+                </div>
+                <div class="exhibition-card__body">
+                  <p class="section-kicker">Paroda</p>
+                  <h3>Vytautas Kašuba. „Žmogaus misterija“</h3>
+                  <p>
+                    Ekspozicijoje pristatoma Vytauto Kašubos, žymaus lietuvių išeivijos skulptoriaus, kūryba. Tai jautrus pasakojimas apie žmogų, formą ir medžiagą.
+                  </p>
+                  <a class="exhibition-card__link" href="/renginiai/parodos/vytautas-kasuba-zmogaus-misterija/">Sužinokite daugiau <i data-lucide="chevron-right"></i></a>
+                </div>
+              </article>
+
+              <article class="exhibition-card exhibition-card--reverse">
+                <div class="exhibition-card__media">
+                  <img data-asset="exhibition-medziai" alt="Galerijos ekspozicija su skulptūromis" />
+                </div>
+                <div class="exhibition-card__body">
+                  <p class="section-kicker">Paroda</p>
+                  <h3>Paroda „Laikas medyje 2022“</h3>
+                  <p>
+                    Parodą jungia medis kaip medžiaga, ženklas ir naratyvinė struktūra. Kūriniai kalba apie laiką, nykimą, atmintį ir žmogaus santykį su aplinka.
+                  </p>
+                  <a class="exhibition-card__link" href="/renginiai/parodos/laikas-medyje-2022/">Sužinokite daugiau <i data-lucide="chevron-right"></i></a>
+                </div>
+              </article>
+
+              <article class="exhibition-card">
+                <div class="exhibition-card__media">
+                  <img data-asset="exhibition-spalva" alt="Spalvingas tapybos darbas" />
+                </div>
+                <div class="exhibition-card__body">
+                  <p class="section-kicker">Paroda</p>
+                  <h3>Paroda „#atsakymas#spalva#slinktis“</h3>
+                  <p>
+                    Abstrakčios G. Trimako spalvos paieškos jungia popierių, šviesą ir cheminius procesus. Paroda kviečia stebėti, kaip vaizdas kinta laike.
+                  </p>
+                  <a class="exhibition-card__link" href="/renginiai/parodos/atsakymas-spalva-slinktis/">Sužinokite daugiau <i data-lucide="chevron-right"></i></a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer" data-wp-partial="template-parts/footer/site-footer.php">
+        <div class="site-footer__bg" aria-hidden="true">
+          <img data-asset="footer-ribbon" alt="" />
+        </div>
+
+        <section class="footer-top" id="investuok">
+          <div class="footer-top__inner">
+            <a class="site-logo site-logo--footer" href="/" aria-label="KlaipėdON">
+              <img data-asset="logo-footer" alt="KlaipėdON" />
+            </a>
+
+            <div class="footer-contact" data-acf-field="contact_email">
+              <a href="mailto:info@klaipedon.lt" class="footer-contact__mail">info@klaipedon.lt</a>
+
+              <form class="newsletter" data-acf-field="contact_form_shortcode">
+                <p class="newsletter__title">Naujienlaiškio prenumerata</p>
+                <label class="newsletter__field">
+                  <span class="sr-only">El. paštas</span>
+                  <input type="email" name="email" placeholder="El. paštas" />
+                </label>
+                <button type="submit" class="newsletter__submit">Prenumeruoti <i data-lucide="chevron-right"></i></button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section class="footer-bottom" id="gyvenk" data-wp-partial="template-parts/sections/footer-cta.php">
+          <div class="footer-bottom__inner">
+            <div class="footer-bottom__headline" data-acf-field="footer_tagline">
+              <p>Sea yourself</p>
+              <p>in Klaipėda</p>
+            </div>
+
+            <div class="footer-bottom__meta">
+              <div class="footer-bottom__legal">
+                <a href="/" data-acf-field="privacy_policy_label">Privatumo politika</a>
+                <p>2026 Klaipėda On.</p>
+                <p>Visos teisės saugomos.</p>
+              </div>
+              <div class="footer-bottom__seal">
+                <img data-asset="city-seal" alt="Klaipėdos miesto ženklas" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </footer>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
