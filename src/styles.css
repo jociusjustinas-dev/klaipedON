@@ -2832,8 +2832,8 @@
     display: none;
     flex: 1;
     flex-direction: column;
-    gap: 1.5rem;
-    margin-top: 1.8rem;
+    gap: 2.15rem;
+    margin-top: 2rem;
   }
 
   .events-filter.is-open .events-filter__body {
@@ -2841,17 +2841,18 @@
   }
 
   .events-filter .filter-group {
-    gap: 0.75rem;
+    gap: 1rem;
   }
 
   .events-filter .filter-group legend {
-    margin-bottom: 0;
+    margin-bottom: 0.15rem;
     font-size: 1.05rem;
     font-weight: 600;
   }
 
   .events-filter .filter-control--date {
     gap: 0;
+    margin-bottom: 0.15rem;
   }
 
   .events-filter .date-field,
@@ -2859,16 +2860,20 @@
     background: var(--color-paper);
   }
 
+  .events-filter .filter-pills {
+    gap: 0.75rem;
+  }
+
   .events-filter .filter-pill {
-    min-height: 2.65rem;
-    padding: 0.62rem 0.95rem;
+    min-height: 2.85rem;
+    padding: 0.72rem 1.05rem;
     font-size: 0.95rem;
     line-height: 1.2;
   }
 
   .events-filter .filter-pills--stacked {
     width: 100%;
-    gap: 0.55rem;
+    gap: 0.75rem;
   }
 
   .events-filter .filter-pills--stacked .filter-pill {
@@ -2879,9 +2884,9 @@
   .events-filter__actions {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.25rem;
     margin-top: auto;
-    padding-top: 0.35rem;
+    padding-top: 0.85rem;
   }
 
   .events-filter .filter-submit {
