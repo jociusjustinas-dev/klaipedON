@@ -2856,6 +2856,32 @@
     transform: translateX(0.25rem);
   }
 
+  .filter-reset[hidden] {
+    display: none;
+  }
+
+  .filter-submit {
+    justify-self: stretch;
+    border: 1px solid var(--color-night);
+    background: var(--color-night);
+    color: var(--color-paper);
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+      background 220ms ease,
+      color 220ms ease,
+      transform 320ms var(--ease-out-cinematic);
+  }
+
+  .filter-submit:hover {
+    background: var(--color-day);
+    border-color: var(--color-day);
+    transform: translateY(-0.12rem);
+  }
+
   .filter-group {
     display: grid;
     gap: 0.85rem;

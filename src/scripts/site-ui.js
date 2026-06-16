@@ -805,13 +805,228 @@ export function initSiteUI() {
     });
   });
 
-  if (eventCategoryFilters.length && eventArchiveCards.length) {
+  const filterForm = document.querySelector("[data-filter-body]");
+  const filterResetButton = document.querySelector("[data-filter-reset]");
+  const archiveEventCards = document.querySelectorAll(".events-grid [data-event-card]");
+  let appliedFormFilters = null;
+
+  const getFilterGroupPills = (form, legendLabel) => {
+    const fieldset = [...form.querySelectorAll(".filter-group")].find(
+      (group) => group.querySelector("legend")?.textContent.trim() === legendLabel,
+    );
+
+    return fieldset
+      ? [...fieldset.querySelectorAll(".filter-pill.is-active")].map((pill) => pill.textContent.trim())
+      : [];
+  };
+
+  const getFormFilterState = (form) => {
+    const dateFieldset = form.querySelector(".filter-group");
+
+    return {
+      date: form.querySelector("[data-date-value]")?.value || "",
+      datePill: dateFieldset?.querySelector(".filter-pill.is-active")?.textContent.trim() || "",
+      location: form.querySelector('[name="location"]')?.value || "",
+      audience: getFilterGroupPills(form, "Auditorija"),
+      language: getFilterGroupPills(form, "Kalba"),
+      accessibility: getFilterGroupPills(form, "Prieinamumas"),
+    };
+  };
+
+  const hasFilterSelections = (form) => {
+    const state = getFormFilterState(form);
+
+    return Boolean(
+      state.date ||
+        state.datePill ||
+        state.location ||
+        state.audience.length ||
+        state.language.length ||
+        state.accessibility.length,
+    );
+  };
+
+  const updateFilterResetVisibility = (form) => {
+    if (!filterResetButton) {
+      return;
+    }
+
+    filterResetButton.hidden = !hasFilterSelections(form);
+  };
+
+  const toIsoDate = (date) => {
+    const pad = (number) => String(number).padStart(2, "0");
+
+    return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
+  };
+
+  const getDatePillRange = (pillLabel) => {
+    const start = new Date();
+    start.setHours(0, 0, 0, 0);
+
+    if (pillLabel === "Rytoj") {
+      start.setDate(start.getDate() + 1);
+      return { start, end: new Date(start) };
+    }
+
+    if (pillLabel === "Šią savaitę") {
+      const end = new Date(start);
+      const day = end.getDay() || 7;
+
+      end.setDate(end.getDate() + (7 - day));
+      return { start, end };
+    }
+
+    return { start, end: new Date(start) };
+  };
+
+  const matchesDateFilter = (cardDate, state) => {
+    if (!cardDate) {
+      return false;
+    }
+
+    if (state.datePill) {
+      const { start, end } = getDatePillRange(state.datePill);
+
+      return cardDate >= toIsoDate(start) && cardDate <= toIsoDate(end);
+    }
+
+    if (state.date) {
+      return cardDate === state.date;
+    }
+
+    return true;
+  };
+
+  const matchesFormFilters = (card, state) => {
+    const hasAnyFilter = Boolean(
+      state.date ||
+        state.datePill ||
+        state.location ||
+        state.audience.length ||
+        state.language.length ||
+        state.accessibility.length,
+    );
+
+    if (!hasAnyFilter) {
+      return true;
+    }
+
+    const cardDate = card.querySelector("time")?.getAttribute("datetime")?.slice(0, 10) || "";
+
+    if ((state.date || state.datePill) && !matchesDateFilter(cardDate, state)) {
+      return false;
+    }
+
+    if (state.location && card.dataset.eventLocation !== state.location) {
+      return false;
+    }
+
+    if (state.language.length) {
+      const cardLanguage = (card.dataset.eventLanguage || "lt").toUpperCase();
+      const selectedLanguages = state.language.map((language) => language.toUpperCase());
+
+      if (!selectedLanguages.includes(cardLanguage)) {
+        return false;
+      }
+    }
+
+    return true;
+  };
+
+  const getActiveEventCategory = () =>
+    document.querySelector("[data-category-filter].is-active")?.getAttribute("data-category-filter") || "all";
+
+  const matchesEventCategory = (card, category) => {
+    const categories = card.getAttribute("data-category")?.split(" ") ?? [];
+
+    return category === "all" || categories.includes(category ?? "");
+  };
+
+  const applyArchiveEventVisibility = () => {
+    const category = getActiveEventCategory();
+
+    archiveEventCards.forEach((card) => {
+      const matchesCategory = matchesEventCategory(card, category);
+      const matchesFilters = appliedFormFilters ? matchesFormFilters(card, appliedFormFilters) : true;
+
+      card.classList.toggle("is-hidden", !(matchesCategory && matchesFilters));
+    });
+  };
+
+  const clearFilterForm = (form) => {
+    form.querySelector("[data-date-clear]")?.click();
+
+    const locationValueInput = form.querySelector('[name="location"]');
+    const locationLabel = form.querySelector("[data-select-label]");
+
+    if (locationValueInput) {
+      locationValueInput.value = "";
+    }
+
+    if (locationLabel) {
+      locationLabel.textContent = "Pasirinkite rajoną";
+    }
+
+    form.querySelectorAll(".filter-pill.is-active").forEach((pill) => pill.classList.remove("is-active"));
+    form.querySelectorAll("[data-select-option]").forEach((option) => {
+      option.setAttribute("aria-selected", "false");
+    });
+    appliedFormFilters = null;
+    updateFilterResetVisibility(form);
+    applyArchiveEventVisibility();
+  };
+
+  if (filterForm) {
+    updateFilterResetVisibility(filterForm);
+
+    filterForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      appliedFormFilters = getFormFilterState(filterForm);
+      applyArchiveEventVisibility();
+    });
+
+    filterForm.addEventListener("click", (event) => {
+      const dateFieldset = filterForm.querySelector(".filter-group");
+
+      if (event.target.closest(".date-calendar__day") || event.target.closest("[data-date-today]")) {
+        dateFieldset?.querySelectorAll(".filter-pill.is-active").forEach((pill) => {
+          pill.classList.remove("is-active");
+        });
+      }
+
+      if (event.target.closest(".filter-pill") && event.target.closest(".filter-group") === dateFieldset) {
+        filterForm.querySelector("[data-date-clear]")?.click();
+      }
+
+      if (
+        event.target.closest(".filter-pill") ||
+        event.target.closest("[data-select-option]") ||
+        event.target.closest(".date-calendar__day") ||
+        event.target.closest("[data-date-clear]") ||
+        event.target.closest("[data-date-today]")
+      ) {
+        requestAnimationFrame(() => updateFilterResetVisibility(filterForm));
+      }
+    });
+
+    filterResetButton?.addEventListener("click", () => {
+      clearFilterForm(filterForm);
+    });
+  }
+
+  if (eventCategoryFilters.length) {
     eventCategoryFilters.forEach((filter) => {
       filter.addEventListener("click", () => {
-        const category = filter.getAttribute("data-category-filter");
-
         eventCategoryFilters.forEach((otherFilter) => otherFilter.classList.remove("is-active"));
         filter.classList.add("is-active");
+
+        if (archiveEventCards.length) {
+          applyArchiveEventVisibility();
+          return;
+        }
+
+        const category = filter.getAttribute("data-category-filter");
 
         eventArchiveCards.forEach((card) => {
           const categories = card.getAttribute("data-category")?.split(" ") ?? [];

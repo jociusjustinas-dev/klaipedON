@@ -128,13 +128,13 @@
             </button>
 
             <form class="events-filter__body" data-filter-body data-acf-field="events_filter_form">
-              <button class="filter-reset" type="reset">Išvalyti filtrus</button>
+              <button class="filter-reset" type="button" data-filter-reset hidden>Išvalyti filtrus</button>
 
               <fieldset class="filter-group">
                 <legend>Data</legend>
                 <div class="filter-control filter-control--date" data-date-picker>
                   <span>Pasirinkite datą</span>
-                  <input type="hidden" name="date" value="2026-06-18" data-date-value />
+                  <input type="hidden" name="date" value="" data-date-value />
                   <button
                     class="date-field"
                     type="button"
@@ -142,7 +142,7 @@
                     aria-controls="events-date-calendar"
                     data-date-trigger
                   >
-                    <span data-date-label>18/06/2026</span>
+                    <span data-date-label>Pasirinkite datą</span>
                     <i data-lucide="calendar-days"></i>
                   </button>
                   <div class="date-calendar" id="events-date-calendar" data-date-calendar hidden>
@@ -168,7 +168,7 @@
                   </div>
                 </div>
                 <div class="filter-pills">
-                  <button type="button" class="filter-pill is-active">Šiandien</button>
+                  <button type="button" class="filter-pill">Šiandien</button>
                   <button type="button" class="filter-pill">Rytoj</button>
                   <button type="button" class="filter-pill">Šią savaitę</button>
                 </div>
@@ -178,7 +178,7 @@
                 <legend>Vieta</legend>
                 <div class="filter-control custom-select" data-custom-select>
                   <span>Pasirinkite rajoną</span>
-                  <input type="hidden" name="location" value="klaipedos-centras" data-select-value />
+                  <input type="hidden" name="location" value="" data-select-value />
                   <button
                     class="select-field"
                     type="button"
@@ -186,11 +186,11 @@
                     aria-controls="location-select-list"
                     data-select-trigger
                   >
-                    <span data-select-label>Klaipėdos centras</span>
+                    <span data-select-label>Pasirinkite rajoną</span>
                     <i data-lucide="chevron-down"></i>
                   </button>
                   <div class="select-menu" id="location-select-list" role="listbox" data-select-menu hidden>
-                    <button type="button" role="option" aria-selected="true" data-select-option data-value="klaipedos-centras">
+                    <button type="button" role="option" aria-selected="false" data-select-option data-value="klaipedos-centras">
                       Klaipėdos centras
                       <i data-lucide="check"></i>
                     </button>
@@ -224,7 +224,7 @@
                 <legend>Kalba</legend>
                 <div class="filter-pills">
                   <button type="button" class="filter-pill">LT</button>
-                  <button type="button" class="filter-pill is-active">EN</button>
+                  <button type="button" class="filter-pill">EN</button>
                   <button type="button" class="filter-pill">DE</button>
                 </div>
               </fieldset>
@@ -238,6 +238,8 @@
                   <button type="button" class="filter-pill">Su naminiais gyvūnais</button>
                 </div>
               </fieldset>
+
+              <button class="filter-submit" type="submit" data-filter-submit>Rodyti rezultatus</button>
             </form>
           </aside>
 
@@ -263,7 +265,7 @@
             </div>
 
             <div class="events-grid" data-acf-repeater="events_archive_items">
-              <article class="archive-event-card" data-event-card data-category="festivaliai koncertai">
+              <article class="archive-event-card" data-event-card data-category="festivaliai koncertai" data-event-location="senamiestis" data-event-language="lt">
                 <a href="/renginiai/kamaniu-silelis/">
                   <div class="archive-event-card__media">
                     <img data-asset="event-aludariai" alt="Aludarių dienos šventė" />
@@ -282,7 +284,7 @@
                 </a>
               </article>
 
-              <article class="archive-event-card archive-event-card--featured" data-event-card data-category="koncertai">
+              <article class="archive-event-card archive-event-card--featured" data-event-card data-category="koncertai" data-event-location="klaipedos-centras" data-event-language="en">
                 <a href="/renginiai/kamaniu-silelis/">
                   <div class="archive-event-card__media">
                     <img data-asset="event-kamaniu-silelis" alt="Grupės Kamanių šilelis koncertas" />
@@ -300,7 +302,7 @@
                 </a>
               </article>
 
-              <article class="archive-event-card" data-event-card data-category="teatras kiti">
+              <article class="archive-event-card" data-event-card data-category="teatras kiti" data-event-location="klaipedos-centras" data-event-language="lt">
                 <a href="/renginiai/kamaniu-silelis/">
                   <div class="archive-event-card__media">
                     <img data-asset="event-godo" alt="Spektaklis Belaukiant Godo" />
@@ -318,7 +320,7 @@
                 </a>
               </article>
 
-              <article class="archive-event-card" data-event-card data-category="festivaliai bendruomenes">
+              <article class="archive-event-card" data-event-card data-category="festivaliai bendruomenes" data-event-location="smiltyne" data-event-language="lt">
                 <a href="/renginiai/kamaniu-silelis/">
                   <div class="archive-event-card__media">
                     <img data-asset="event-juros-svente" alt="Jūros šventei 90" />
@@ -337,7 +339,7 @@
                 </a>
               </article>
 
-              <article class="archive-event-card" data-event-card data-category="koncertai">
+              <article class="archive-event-card" data-event-card data-category="koncertai" data-event-location="klaipedos-centras" data-event-language="lt">
                 <a href="/renginiai/kamaniu-silelis/">
                   <div class="archive-event-card__media">
                     <img data-asset="event-biplan" alt="Biplan koncertas" />
@@ -355,7 +357,7 @@
                 </a>
               </article>
 
-              <article class="archive-event-card" data-event-card data-category="ekskursijos edukacijos">
+              <article class="archive-event-card" data-event-card data-category="ekskursijos edukacijos" data-event-location="melnrage" data-event-language="en">
                 <a href="/renginiai/kamaniu-silelis/">
                   <div class="archive-event-card__media">
                     <img data-asset="hero-bg" alt="Klaipėdos pajūris" />
