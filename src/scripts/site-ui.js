@@ -70,10 +70,7 @@ export function initSiteUI() {
   );
   const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   const eventAccessibilityItems = [
-    {
-      icon: "languages",
-      label: "Informacija anglų kalba",
-    },
+    { type: "language" },
     {
       icon: "accessibility",
       label: "Pritaikyta judėjimo negaliai",
@@ -83,6 +80,16 @@ export function initSiteUI() {
       label: "Galima su gyvūnais",
     },
   ];
+
+  const getEventLanguageMeta = (card) => {
+    const lang = (card.dataset.eventLanguage || "lt").toLowerCase();
+    const code = lang === "en" ? "EN" : "LT";
+
+    return {
+      code,
+      label: lang === "en" ? "Informacija anglų kalba" : "Informacija lietuvių kalba",
+    };
+  };
 
   eventArchiveCards.forEach((card) => {
     const media = card.querySelector(".archive-event-card__media");
@@ -110,17 +117,34 @@ export function initSiteUI() {
 
     eventAccessibilityItems.forEach((item) => {
       const listItem = document.createElement("li");
-      const icon = document.createElement("i");
-      const label = document.createElement("span");
+      const srLabel = document.createElement("span");
+      srLabel.className = "archive-event-card__accessibility-label";
 
-      icon.setAttribute("data-lucide", item.icon);
-      label.textContent = item.label;
+      if (item.type === "language") {
+        const { code, label } = getEventLanguageMeta(card);
+        const langCode = document.createElement("span");
 
-      listItem.append(icon, label);
+        langCode.className = "archive-event-card__accessibility-lang";
+        langCode.setAttribute("aria-hidden", "true");
+        langCode.textContent = code;
+        srLabel.textContent = label;
+        listItem.append(langCode, srLabel);
+      } else {
+        const icon = document.createElement("i");
+
+        icon.setAttribute("data-lucide", item.icon);
+        srLabel.textContent = item.label;
+        listItem.append(icon, srLabel);
+      }
+
       list.append(listItem);
     });
 
-    media.insertAdjacentElement("afterend", list);
+    const link = card.querySelector("a");
+
+    if (link) {
+      link.append(list);
+    }
   });
 
   navItemsWithSubmenu.forEach((item) => {
