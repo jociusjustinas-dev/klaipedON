@@ -59,6 +59,7 @@ export function initSiteUI() {
   const customSelects = document.querySelectorAll("[data-custom-select]");
   const toggleChecks = document.querySelectorAll("[data-toggle-check]");
   const eventCategoryFilters = document.querySelectorAll("[data-category-filter]");
+  const eventCategoryNextButtons = document.querySelectorAll("[data-category-next]");
   const eventArchiveCards = document.querySelectorAll("[data-event-card]");
   const eventsCarousels = document.querySelectorAll("[data-events-carousel]");
   const attractionSliders = document.querySelectorAll("[data-attractions-slider]");
@@ -148,6 +149,26 @@ export function initSiteUI() {
     setHeaderState();
     window.addEventListener("scroll", setHeaderState, { passive: true });
   }
+
+  eventCategoryNextButtons.forEach((button) => {
+    const wrap = button.closest(".event-categories-wrap");
+    const rail = wrap?.querySelector("[data-category-rail]");
+
+    if (!rail) {
+      return;
+    }
+
+    button.addEventListener("click", () => {
+      const maxScrollLeft = rail.scrollWidth - rail.clientWidth;
+      const isAtEnd = rail.scrollLeft >= maxScrollLeft - 8;
+      const nextLeft = isAtEnd ? 0 : Math.min(rail.scrollLeft + rail.clientWidth * 0.72, maxScrollLeft);
+
+      rail.scrollTo({
+        left: nextLeft,
+        behavior: "smooth",
+      });
+    });
+  });
 
   accordionTriggers.forEach((trigger) => {
     const panelId = trigger.getAttribute("aria-controls");

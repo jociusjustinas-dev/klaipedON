@@ -242,20 +242,25 @@
           </aside>
 
           <div class="events-archive__content">
-            <nav class="event-categories" aria-label="Renginių kategorijos" data-acf-repeater="event_categories">
-              <button type="button" class="category-chip is-active" data-category-filter="all">Visi</button>
-              <button type="button" class="category-chip" data-category-filter="parodos">Parodos</button>
-              <button type="button" class="category-chip" data-category-filter="koncertai">Koncertai</button>
-              <button type="button" class="category-chip" data-category-filter="festivaliai">Festivaliai</button>
-              <button type="button" class="category-chip" data-category-filter="kinas">Kinas</button>
-              <button type="button" class="category-chip" data-category-filter="literatura">Literatūra</button>
-              <button type="button" class="category-chip" data-category-filter="ekskursijos">Ekskursijos</button>
-              <button type="button" class="category-chip" data-category-filter="edukacijos">Edukacijos</button>
-              <button type="button" class="category-chip" data-category-filter="bendruomenes">Bendruomenės</button>
-              <button type="button" class="category-chip" data-category-filter="naktine-kultura">Naktinė kultūra</button>
-              <button type="button" class="category-chip" data-category-filter="sportas">Sportas</button>
-              <button type="button" class="category-chip" data-category-filter="kiti">Kiti</button>
-            </nav>
+            <div class="event-categories-wrap">
+              <nav class="event-categories" aria-label="Renginių kategorijos" data-acf-repeater="event_categories" data-category-rail>
+                <button type="button" class="category-chip is-active" data-category-filter="all">Visi</button>
+                <button type="button" class="category-chip" data-category-filter="parodos">Parodos</button>
+                <button type="button" class="category-chip" data-category-filter="koncertai">Koncertai</button>
+                <button type="button" class="category-chip" data-category-filter="festivaliai">Festivaliai</button>
+                <button type="button" class="category-chip" data-category-filter="kinas">Kinas</button>
+                <button type="button" class="category-chip" data-category-filter="literatura">Literatūra</button>
+                <button type="button" class="category-chip" data-category-filter="ekskursijos">Ekskursijos</button>
+                <button type="button" class="category-chip" data-category-filter="edukacijos">Edukacijos</button>
+                <button type="button" class="category-chip" data-category-filter="bendruomenes">Bendruomenės</button>
+                <button type="button" class="category-chip" data-category-filter="naktine-kultura">Naktinė kultūra</button>
+                <button type="button" class="category-chip" data-category-filter="sportas">Sportas</button>
+                <button type="button" class="category-chip" data-category-filter="kiti">Kiti</button>
+              </nav>
+              <button type="button" class="event-categories__next" aria-label="Rodyti daugiau kategorijų" data-category-next>
+                <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
 
             <div class="events-grid" data-acf-repeater="events_archive_items">
               <article class="archive-event-card" data-event-card data-category="festivaliai koncertai">
