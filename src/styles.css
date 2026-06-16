@@ -2823,10 +2823,6 @@
     transition: transform 320ms var(--ease-out-cinematic);
   }
 
-  .events-filter.is-open .events-filter__toggle > .lucide {
-    transform: rotate(180deg);
-  }
-
   .events-filter__body {
     display: none;
     gap: 1.85rem;
