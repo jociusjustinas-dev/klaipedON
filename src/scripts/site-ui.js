@@ -59,7 +59,7 @@ export function initSiteUI() {
   const customSelects = document.querySelectorAll("[data-custom-select]");
   const toggleChecks = document.querySelectorAll("[data-toggle-check]");
   const eventCategoryFilters = document.querySelectorAll("[data-category-filter]");
-  const eventCategoryNextButtons = document.querySelectorAll("[data-category-next]");
+  const eventCategoryWraps = document.querySelectorAll(".event-categories-wrap");
   const eventArchiveCards = document.querySelectorAll("[data-event-card]");
   const eventsCarousels = document.querySelectorAll("[data-events-carousel]");
   const attractionSliders = document.querySelectorAll("[data-attractions-slider]");
@@ -227,15 +227,34 @@ export function initSiteUI() {
     window.addEventListener("scroll", setHeaderState, { passive: true });
   }
 
-  eventCategoryNextButtons.forEach((button) => {
-    const wrap = button.closest(".event-categories-wrap");
-    const rail = wrap?.querySelector("[data-category-rail]");
+  eventCategoryWraps.forEach((wrap) => {
+    const rail = wrap.querySelector("[data-category-rail]");
+    const nextButton = wrap.querySelector("[data-category-next]");
+    const prevButton = wrap.querySelector("[data-category-prev]");
 
     if (!rail) {
       return;
     }
 
-    button.addEventListener("click", () => {
+    const updateCategoryArrows = () => {
+      const maxScrollLeft = rail.scrollWidth - rail.clientWidth;
+      const canScrollLeft = rail.scrollLeft > 8;
+
+      wrap.classList.toggle("has-prev", canScrollLeft);
+
+      if (prevButton) {
+        prevButton.hidden = !canScrollLeft;
+      }
+    };
+
+    prevButton?.addEventListener("click", () => {
+      rail.scrollTo({
+        left: Math.max(0, rail.scrollLeft - rail.clientWidth * 0.72),
+        behavior: "smooth",
+      });
+    });
+
+    nextButton?.addEventListener("click", () => {
       const maxScrollLeft = rail.scrollWidth - rail.clientWidth;
       const isAtEnd = rail.scrollLeft >= maxScrollLeft - 8;
       const nextLeft = isAtEnd ? 0 : Math.min(rail.scrollLeft + rail.clientWidth * 0.72, maxScrollLeft);
@@ -245,6 +264,10 @@ export function initSiteUI() {
         behavior: "smooth",
       });
     });
+
+    rail.addEventListener("scroll", updateCategoryArrows, { passive: true });
+    window.addEventListener("resize", updateCategoryArrows);
+    updateCategoryArrows();
   });
 
   accordionTriggers.forEach((trigger) => {
