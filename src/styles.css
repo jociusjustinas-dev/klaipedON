@@ -4536,6 +4536,23 @@
     margin-top: 0;
   }
 
+  .related-events .events-carousel {
+    width: 100%;
+    margin-left: 0;
+    overflow: hidden;
+  }
+
+  .related-events__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 1.5rem;
+  }
+
+  .related-events .events-carousel__controls {
+    justify-content: flex-start;
+  }
+
   .page-shell--submit-event {
     background: var(--color-day);
     --footer-step-color: var(--color-day);
@@ -6302,6 +6319,11 @@
 
   .related-events__rail {
     margin-inline: -1.25rem;
+    padding-inline: 1.25rem;
+  }
+
+  .related-events__footer {
+    margin-top: 1rem;
     padding-inline: 1.25rem;
   }
 
