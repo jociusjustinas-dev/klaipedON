@@ -852,7 +852,6 @@ export function initSiteUI() {
     return {
       date: form.querySelector("[data-date-value]")?.value || "",
       datePill: dateFieldset?.querySelector(".filter-pill.is-active")?.textContent.trim() || "",
-      location: form.querySelector('[name="location"]')?.value || "",
       audience: getFilterGroupPills(form, "Auditorija"),
       language: getFilterGroupPills(form, "Kalba"),
       accessibility: getFilterGroupPills(form, "Prieinamumas"),
@@ -865,7 +864,6 @@ export function initSiteUI() {
     return Boolean(
       state.date ||
         state.datePill ||
-        state.location ||
         state.audience.length ||
         state.language.length ||
         state.accessibility.length,
@@ -928,7 +926,6 @@ export function initSiteUI() {
     const hasAnyFilter = Boolean(
       state.date ||
         state.datePill ||
-        state.location ||
         state.audience.length ||
         state.language.length ||
         state.accessibility.length,
@@ -941,10 +938,6 @@ export function initSiteUI() {
     const cardDate = card.querySelector("time")?.getAttribute("datetime")?.slice(0, 10) || "";
 
     if ((state.date || state.datePill) && !matchesDateFilter(cardDate, state)) {
-      return false;
-    }
-
-    if (state.location && card.dataset.eventLocation !== state.location) {
       return false;
     }
 
@@ -983,21 +976,7 @@ export function initSiteUI() {
   const clearFilterForm = (form) => {
     form.querySelector("[data-date-clear]")?.click();
 
-    const locationValueInput = form.querySelector('[name="location"]');
-    const locationLabel = form.querySelector("[data-select-label]");
-
-    if (locationValueInput) {
-      locationValueInput.value = "";
-    }
-
-    if (locationLabel) {
-      locationLabel.textContent = "Pasirinkite rajoną";
-    }
-
     form.querySelectorAll(".filter-pill.is-active").forEach((pill) => pill.classList.remove("is-active"));
-    form.querySelectorAll("[data-select-option]").forEach((option) => {
-      option.setAttribute("aria-selected", "false");
-    });
     appliedFormFilters = null;
     updateFilterResetVisibility(form);
     applyArchiveEventVisibility();

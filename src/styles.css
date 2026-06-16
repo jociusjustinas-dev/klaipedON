@@ -2823,14 +2823,93 @@
     transition: transform 320ms var(--ease-out-cinematic);
   }
 
+  .events-filter.is-open {
+    display: flex;
+    flex-direction: column;
+  }
+
   .events-filter__body {
     display: none;
-    gap: 1.85rem;
+    flex: 1;
+    flex-direction: column;
+    gap: 1.5rem;
     margin-top: 1.8rem;
   }
 
   .events-filter.is-open .events-filter__body {
-    display: grid;
+    display: flex;
+  }
+
+  .events-filter .filter-group {
+    gap: 0.75rem;
+  }
+
+  .events-filter .filter-group legend {
+    margin-bottom: 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  .events-filter .filter-control--date {
+    gap: 0;
+  }
+
+  .events-filter .date-field,
+  .events-filter .select-field {
+    background: var(--color-paper);
+  }
+
+  .events-filter .filter-pill {
+    min-height: 2.65rem;
+    padding: 0.62rem 0.95rem;
+    font-size: 0.95rem;
+    line-height: 1.2;
+  }
+
+  .events-filter .filter-pills--stacked {
+    width: 100%;
+    gap: 0.55rem;
+  }
+
+  .events-filter .filter-pills--stacked .filter-pill {
+    width: 100%;
+    text-align: left;
+  }
+
+  .events-filter__actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: auto;
+    padding-top: 0.35rem;
+  }
+
+  .events-filter .filter-submit {
+    width: auto;
+    min-width: 11.5rem;
+    padding: 0.82rem 1.35rem;
+  }
+
+  .events-filter .filter-reset--link {
+    border: 0;
+    background: transparent;
+    color: var(--color-night);
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.2;
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+
+  .events-filter .filter-reset--link:hover {
+    color: var(--color-day);
+    background: transparent;
+    transform: none;
+  }
+
+  .events-filter .filter-reset--link[hidden] {
+    display: none;
   }
 
   .filter-reset {
@@ -5416,7 +5495,7 @@
   }
 
   .events-filter.is-open .events-filter__body {
-    display: grid;
+    display: flex;
   }
 
   .events-grid {
