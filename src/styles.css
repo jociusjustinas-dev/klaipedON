@@ -1938,7 +1938,7 @@
 
   .news-detail-hero__media {
     position: relative;
-    min-height: 25rem;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
     background: var(--color-stone);
   }
@@ -1950,7 +1950,7 @@
   .news-detail-hero__media img {
     display: block;
     width: 100%;
-    height: 25rem;
+    height: 100%;
     object-fit: cover;
     transition: transform 1100ms var(--ease-out-cinematic);
   }
@@ -6044,12 +6044,6 @@
   .news-detail-hero h1 {
     font-size: clamp(2.85rem, 12vw, 4.4rem);
     line-height: 1.05;
-  }
-
-  .news-detail-hero__media,
-  .news-detail-hero__media img {
-    min-height: 20rem;
-    height: 20rem;
   }
 
   .news-detail-hero__media::after {
