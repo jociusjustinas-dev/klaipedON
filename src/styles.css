@@ -3367,7 +3367,8 @@
     max-width: calc(100% - 1.8rem);
   }
 
-  .archive-event-card__media span {
+  .archive-event-card__labels span,
+  .archive-event-card__media > span {
     display: inline-block;
     margin: 0;
     border: 1px solid var(--color-day);
@@ -3379,13 +3380,6 @@
     letter-spacing: 0.02em;
     line-height: 1;
     backdrop-filter: blur(12px);
-  }
-
-  .archive-event-card:nth-child(3n + 2) .archive-event-card__labels span,
-  .archive-event-card:nth-child(3n + 3) .archive-event-card__labels span {
-    border-color: var(--color-day);
-    background: var(--color-day);
-    color: #ffffff;
   }
 
   .archive-event-card__accessibility {
@@ -3446,14 +3440,6 @@
     display: grid;
     gap: 0.85rem;
     width: 100%;
-  }
-
-  .archive-event-card:nth-child(3n + 2) .archive-event-card__media span {
-    background: var(--color-paper);
-  }
-
-  .archive-event-card:nth-child(3n + 3) .archive-event-card__media span {
-    background: var(--color-stone);
   }
 
   .archive-event-card time {
