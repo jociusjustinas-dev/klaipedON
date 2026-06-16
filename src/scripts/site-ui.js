@@ -87,7 +87,20 @@ export function initSiteUI() {
   eventArchiveCards.forEach((card) => {
     const media = card.querySelector(".archive-event-card__media");
 
-    if (!media || card.querySelector(".archive-event-card__accessibility")) {
+    if (!media) {
+      return;
+    }
+
+    const categoryLabels = media.querySelectorAll(":scope > span");
+
+    if (categoryLabels.length && !media.querySelector(".archive-event-card__labels")) {
+      const labelWrap = document.createElement("div");
+      labelWrap.className = "archive-event-card__labels";
+      categoryLabels[0].before(labelWrap);
+      categoryLabels.forEach((label) => labelWrap.append(label));
+    }
+
+    if (card.querySelector(".archive-event-card__accessibility")) {
       return;
     }
 
