@@ -2578,8 +2578,9 @@
   }
 
   .living-card > img {
+    display: block;
     width: 100%;
-    aspect-ratio: 1.25;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     transition: transform 900ms var(--ease-out-cinematic), filter 900ms var(--ease-out-cinematic);
   }

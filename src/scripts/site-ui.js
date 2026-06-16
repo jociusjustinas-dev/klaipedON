@@ -124,7 +124,57 @@ export function initSiteUI() {
     return list;
   };
 
+  const normalizeCategorySlug = (value) =>
+    value
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/\p{M}/gu, "")
+      .trim()
+      .replace(/\s+/g, "-");
+
+  const relatedEventsSection = document.querySelector(".related-events");
+  const relatedCategoryLabel = document
+    .querySelector(".event-detail-card [data-acf-field='event_category']")
+    ?.textContent.trim();
+  const relatedCurrentTitle = document
+    .querySelector(".event-detail-card [data-acf-field='event_title']")
+    ?.textContent.trim();
+
+  if (relatedEventsSection && relatedCategoryLabel) {
+    const relatedCategorySlug = normalizeCategorySlug(relatedCategoryLabel);
+
+    relatedEventsSection.querySelectorAll("[data-event-card]").forEach((card) => {
+      const cardTitle = card.querySelector("h2")?.textContent.trim();
+      const cardSlugs = (card.dataset.category || "")
+        .split(/\s+/)
+        .filter(Boolean);
+      const cardLabels = card.querySelectorAll(".archive-event-card__media > span");
+      const matchesCategory =
+        cardSlugs.includes(relatedCategorySlug) ||
+        Array.from(cardLabels).some((label) => label.textContent.trim() === relatedCategoryLabel);
+      const isCurrentEvent = relatedCurrentTitle && cardTitle === relatedCurrentTitle;
+
+      if (!matchesCategory || isCurrentEvent) {
+        card.remove();
+        return;
+      }
+
+      cardLabels.forEach((label) => {
+        if (label.textContent.trim() !== relatedCategoryLabel) {
+          label.remove();
+        }
+      });
+    });
+
+    if (!relatedEventsSection.querySelector("[data-event-card]")) {
+      relatedEventsSection.hidden = true;
+    }
+  }
+
   eventArchiveCards.forEach((card) => {
+    if (!card.isConnected) {
+      return;
+    }
     const media = card.querySelector(".archive-event-card__media");
 
     if (!media) {
