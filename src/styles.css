@@ -3327,10 +3327,12 @@
     display: grid;
     gap: 1.05rem;
     height: 100%;
+    justify-items: start;
   }
 
   .archive-event-card__media {
     position: relative;
+    width: 100%;
     aspect-ratio: 16 / 9;
     overflow: hidden;
     background: var(--color-stone);
@@ -3389,6 +3391,11 @@
   .archive-event-card__accessibility {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    align-self: end;
+    justify-self: start;
+    width: max-content;
+    max-width: 100%;
     gap: 0.58rem;
     margin: 0;
     margin-top: auto;
@@ -3399,8 +3406,9 @@
 
   .archive-event-card__accessibility li {
     display: inline-flex;
+    flex: 0 0 auto;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .archive-event-card__accessibility-lang {
@@ -3437,6 +3445,7 @@
   .archive-event-card__body {
     display: grid;
     gap: 0.85rem;
+    width: 100%;
   }
 
   .archive-event-card:nth-child(3n + 2) .archive-event-card__media span {
