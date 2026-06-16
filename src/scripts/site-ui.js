@@ -69,6 +69,46 @@ export function initSiteUI() {
     ".events-panel, .info-panel, .home-attractions__intro, .home-attractions__layout, .home-guide__intro, .home-guide-card, .home-news__head, .home-news-card, .news-hero__inner, .news-archive__intro, .news-card, .news-detail-hero__inner, .news-detail-content__inner, .bike-hero__inner, .bike-content__intro, .bike-section, .archive-hero__inner, .exhibitions-hero__inner, .exhibition-venue, .exhibition-card, .about-hero__inner, .about-history-row, .living-hero__inner, .living-directory__intro, .living-card, .living-map, .events-filter, .event-categories, .archive-event-card",
   );
   const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const eventAccessibilityItems = [
+    {
+      icon: "languages",
+      label: "Informacija anglų kalba",
+    },
+    {
+      icon: "accessibility",
+      label: "Pritaikyta judėjimo negaliai",
+    },
+    {
+      icon: "paw-print",
+      label: "Galima su gyvūnais",
+    },
+  ];
+
+  eventArchiveCards.forEach((card) => {
+    const media = card.querySelector(".archive-event-card__media");
+
+    if (!media || card.querySelector(".archive-event-card__accessibility")) {
+      return;
+    }
+
+    const list = document.createElement("ul");
+    list.className = "archive-event-card__accessibility";
+    list.setAttribute("aria-label", "Renginio prieinamumo žymos");
+
+    eventAccessibilityItems.forEach((item) => {
+      const listItem = document.createElement("li");
+      const icon = document.createElement("i");
+      const label = document.createElement("span");
+
+      icon.setAttribute("data-lucide", item.icon);
+      label.textContent = item.label;
+
+      listItem.append(icon, label);
+      list.append(listItem);
+    });
+
+    media.insertAdjacentElement("afterend", list);
+  });
 
   navItemsWithSubmenu.forEach((item) => {
     item.classList.add("site-nav__item--has-submenu");
