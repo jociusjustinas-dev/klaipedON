@@ -1,5 +1,5 @@
 import "./styles.css";
-import { createIcons, Accessibility, Bike, Bus, CalendarDays, Check, ChevronDown, ChevronLeft, ChevronRight, Clock, CloudUpload, Copy, Filter, Globe, Languages, Mail, MapPin, PawPrint, Phone, Route, Search, Send, Share2, Ship, Star, Ticket, TrainFront } from "lucide";
+import { createIcons, Accessibility, ArrowRight, Bike, Bus, CalendarDays, Check, ChevronDown, ChevronLeft, ChevronRight, Clock, CloudUpload, Copy, Filter, Globe, Languages, Mail, MapPin, PawPrint, Phone, Route, Search, Send, Share2, Ship, Star, Ticket, TrainFront } from "lucide";
 import { initSiteUI } from "./scripts/site-ui.js";
 import eventAludariai from "./assets/event-aludariai.png";
 import eventBiplan from "./assets/event-biplan.png";
@@ -79,6 +79,7 @@ initSiteUI();
 createIcons({
   icons: {
     Accessibility,
+    ArrowRight,
     Bike,
     Bus,
     CalendarDays,
