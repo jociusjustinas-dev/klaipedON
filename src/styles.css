@@ -4538,8 +4538,9 @@
   }
 
   .related-events .events-carousel {
-    width: 100%;
-    margin-left: 0;
+    position: relative;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
     overflow: hidden;
   }
 
@@ -6318,14 +6319,8 @@
     flex-direction: column;
   }
 
-  .related-events__rail {
-    margin-inline: -1.25rem;
-    padding-inline: 1.25rem;
-  }
-
   .related-events__footer {
     margin-top: 1rem;
-    padding-inline: 1.25rem;
   }
 
   .submit-hero {
