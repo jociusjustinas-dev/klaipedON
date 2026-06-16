@@ -4243,6 +4243,14 @@
     color: var(--color-day);
   }
 
+  .event-detail-card .archive-event-card__accessibility {
+    justify-content: flex-start;
+    align-self: start;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
   .event-detail-card__cta {
     display: inline-flex;
     min-height: 3.35rem;

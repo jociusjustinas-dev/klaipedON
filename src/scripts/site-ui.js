@@ -111,35 +111,7 @@ export function initSiteUI() {
       return;
     }
 
-    const list = document.createElement("ul");
-    list.className = "archive-event-card__accessibility";
-    list.setAttribute("aria-label", "Renginio prieinamumo žymos");
-
-    eventAccessibilityItems.forEach((item) => {
-      const listItem = document.createElement("li");
-      const srLabel = document.createElement("span");
-      srLabel.className = "archive-event-card__accessibility-label";
-
-      if (item.type === "language") {
-        const { code, label } = getEventLanguageMeta(card);
-        const langCode = document.createElement("span");
-
-        langCode.className = "archive-event-card__accessibility-lang";
-        langCode.setAttribute("aria-hidden", "true");
-        langCode.textContent = code;
-        srLabel.textContent = label;
-        listItem.append(langCode, srLabel);
-      } else {
-        const icon = document.createElement("i");
-
-        icon.setAttribute("data-lucide", item.icon);
-        srLabel.textContent = item.label;
-        listItem.append(icon, srLabel);
-      }
-
-      list.append(listItem);
-    });
-
+    const list = createEventAccessibilityList(card);
     const body = card.querySelector(".archive-event-card__body");
     const link = card.querySelector("a");
 
@@ -148,6 +120,16 @@ export function initSiteUI() {
     } else if (link) {
       link.append(list);
     }
+  });
+
+  document.querySelectorAll(".event-detail-card").forEach((card) => {
+    const meta = card.querySelector(".event-detail-meta");
+
+    if (!meta || card.querySelector(".archive-event-card__accessibility")) {
+      return;
+    }
+
+    meta.insertAdjacentElement("afterend", createEventAccessibilityList(card));
   });
 
   navItemsWithSubmenu.forEach((item) => {
