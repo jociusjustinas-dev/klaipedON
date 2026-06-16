@@ -140,9 +140,12 @@ export function initSiteUI() {
       list.append(listItem);
     });
 
+    const body = card.querySelector(".archive-event-card__body");
     const link = card.querySelector("a");
 
-    if (link) {
+    if (body) {
+      body.append(list);
+    } else if (link) {
       link.append(list);
     }
   });
