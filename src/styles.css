@@ -1,5 +1,5 @@
 :root {
-  --color-paper: #f9f9f9;
+  --color-paper: #ffffff;
   --color-soft-paper: #f4ede9;
   --color-soft-blue: #eaf1ff;
   --color-stone: #cec4bd;
@@ -1248,7 +1248,7 @@
 
   .home-news-card__media {
     position: relative;
-    aspect-ratio: 436 / 340;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
     background: var(--color-night);
   }
@@ -1423,7 +1423,7 @@
 
   .news-card__media {
     position: relative;
-    aspect-ratio: 436 / 340;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
     background: var(--color-night);
   }
@@ -3190,13 +3190,13 @@
 
   .archive-event-card__media {
     position: relative;
-    aspect-ratio: 1.2;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
     background: var(--color-stone);
   }
 
   .archive-event-card--featured .archive-event-card__media {
-    aspect-ratio: 1;
+    aspect-ratio: 16 / 9;
   }
 
   .archive-event-card__media img {
@@ -3255,6 +3255,7 @@
   }
 
   .archive-event-card p {
+    display: none;
     margin: 0;
     color: rgba(2, 2, 5, 0.68);
     font-size: 1rem;
@@ -3262,7 +3263,7 @@
   }
 
   .archive-event-card dl {
-    display: grid;
+    display: none;
     gap: 0.42rem;
     margin: 0.3rem 0 0;
     font-size: 0.92rem;
@@ -5893,7 +5894,7 @@
 
   .archive-event-card__media,
   .archive-event-card--featured .archive-event-card__media {
-    aspect-ratio: 1.12;
+    aspect-ratio: 16 / 9;
   }
 
   .archive-event-card time {
