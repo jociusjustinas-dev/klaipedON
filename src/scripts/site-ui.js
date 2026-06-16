@@ -565,12 +565,24 @@ export function initSiteUI() {
 
   if (filterToggle) {
     const filterRoot = filterToggle.closest(".events-filter");
+    const desktopFilter = window.matchMedia("(min-width: 1101px)");
+
+    const setFilterOpen = (open) => {
+      filterToggle.setAttribute("aria-expanded", String(open));
+      filterToggle.setAttribute("aria-label", open ? "Suskleisti filtravimą" : "Atverti filtravimą");
+      filterRoot?.classList.toggle("is-open", open);
+    };
+
+    setFilterOpen(desktopFilter.matches);
+
+    desktopFilter.addEventListener("change", (event) => {
+      setFilterOpen(event.matches);
+    });
 
     filterToggle.addEventListener("click", () => {
       const isOpen = filterToggle.getAttribute("aria-expanded") === "true";
 
-      filterToggle.setAttribute("aria-expanded", String(!isOpen));
-      filterRoot?.classList.toggle("is-open", !isOpen);
+      setFilterOpen(!isOpen);
     });
   }
 
