@@ -3261,15 +3261,26 @@
   }
 
   .archive-event-card__media span {
-    position: relative;
-    z-index: 1;
+    position: absolute;
+    top: 0.9rem;
+    left: 0.9rem;
+    z-index: 2;
     display: inline-block;
-    margin: 0.75rem 0 0 0.75rem;
-    background: var(--color-soft-paper);
+    margin: 0;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    background: rgba(255, 255, 255, 0.88);
     color: var(--color-night);
-    padding: 0.45rem 0.65rem;
-    font-size: 0.82rem;
+    padding: 0.52rem 0.72rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
     line-height: 1;
+    backdrop-filter: blur(12px);
+  }
+
+  .archive-event-card__media span + span {
+    left: auto;
+    right: 0.9rem;
   }
 
   .archive-event-card__body {
