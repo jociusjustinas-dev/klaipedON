@@ -217,6 +217,10 @@ export function initSiteUI() {
 
   navItemsWithSubmenu.forEach((item) => {
     item.classList.add("site-nav__item--has-submenu");
+
+    if (item.querySelector(".site-nav__mega-menu")) {
+      item.classList.add("site-nav__item--mega");
+    }
   });
 
   if (mobileMenu) {

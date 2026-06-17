@@ -243,6 +243,143 @@
     transform: translateY(0);
   }
 
+  .site-nav__item--mega {
+    position: static;
+  }
+
+  .site-nav__item--mega.site-nav__item--has-submenu::after {
+    left: 0;
+    width: 100%;
+    height: 22rem;
+  }
+
+  .site-nav__mega-menu {
+    display: block;
+    top: 5.35rem;
+    left: 0;
+    right: 0;
+    width: auto;
+    min-width: 0;
+    gap: 0;
+    padding: 0 0 2.5rem;
+    transform: translateY(-0.6rem);
+  }
+
+  .site-nav__item--mega:hover .site-nav__mega-menu,
+  .site-nav__item--mega:focus-within .site-nav__mega-menu {
+    transform: translateY(0);
+  }
+
+  .site-nav__mega-eyebrow {
+    margin: 0 0 1.75rem;
+    color: var(--color-ink);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .site-nav__mega-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+  }
+
+  .site-nav__mega-col {
+    padding: 1.75rem 2rem 0;
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+  }
+
+  .site-nav__mega-col:last-child {
+    border-right: 0;
+  }
+
+  .site-nav__mega-col-title {
+    margin: 0 0 1.15rem;
+    color: var(--color-ink);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .site-nav__mega-list,
+  .site-nav__mega-sublist {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .site-nav__mega-list {
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .site-nav__mega-list > li {
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .site-nav__mega-list a,
+  .site-nav__mega-cta {
+    display: inline-block;
+    width: max-content;
+    color: var(--color-ink);
+    font-size: 1rem;
+    line-height: 1.25;
+    transition:
+      opacity 220ms ease,
+      transform 320ms var(--ease-out-cinematic),
+      font-weight 220ms ease;
+  }
+
+  .site-nav__mega-list a::before {
+    content: "– ";
+  }
+
+  .site-nav__mega-list a:hover,
+  .site-nav__mega-list a:focus-visible,
+  .site-nav__mega-cta:hover,
+  .site-nav__mega-cta:focus-visible {
+    font-weight: 500;
+    opacity: 0.72;
+    transform: translateX(0.55rem);
+  }
+
+  .site-nav__mega-label {
+    color: var(--color-ink);
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.25;
+  }
+
+  .site-nav__mega-label::before {
+    content: "– ";
+  }
+
+  .site-nav__mega-sublist {
+    display: grid;
+    gap: 0.55rem;
+    padding-left: 0.85rem;
+  }
+
+  .site-nav__mega-col--cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1.75rem;
+  }
+
+  .site-nav__mega-cta {
+    max-width: 12rem;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .site-header:has(.site-nav__item--mega:hover)::before,
+  .site-header:has(.site-nav__item--mega:focus-within)::before {
+    height: 26rem;
+  }
+
   .site-nav__item:hover .site-nav__link,
   .site-nav__item:focus-within .site-nav__link {
     font-weight: 600;
